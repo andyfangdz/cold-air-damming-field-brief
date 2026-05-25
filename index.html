@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cold Air Damming Field Brief - May 23-25, 2026</title>
+  <title>Cold Air Damming Field Brief - May 22-25, 2026</title>
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
@@ -209,6 +209,18 @@
       background: var(--panel);
     }
 
+    .timeline.five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .timeline.five .lead {
+      font-size: 24px;
+    }
+
+    .timeline.five p {
+      font-size: 17px;
+    }
+
     .timeline > div {
       padding: 22px;
       border-right: 2px solid var(--ink);
@@ -272,6 +284,11 @@
       gap: 22px;
       align-items: stretch;
       margin-top: 28px;
+    }
+
+    .surface-sequence {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .weather-image {
@@ -1386,6 +1403,10 @@
     }
 
     @media (max-width: 900px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
       main {
         height: auto;
         min-height: 100dvh;
@@ -1467,6 +1488,8 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
       .worked-grid > div:first-child {
+        min-width: 0;
+        max-width: 100%;
         overflow-x: auto;
       }
       .route-table {
@@ -1524,10 +1547,10 @@
   <section class="slide" id="s1" data-kicker="Field brief" data-number="01/19">
     <div class="title-grid">
       <div>
-        <span class="eyebrow">May 23-25, 2026 / Southeast to NYC</span>
+        <span class="eyebrow">May 22-25, 2026 / Southeast to NYC</span>
         <h1>Cold air damming was the floor. The MCV was the agitator.</h1>
         <div class="big-claim">
-          The East Coast mess was not a single thunderstorm problem. It was a shallow, stubborn cold dome under warm/moist overrunning, with convection organizing where lift and instability overlapped best: inland and near the Appalachians.
+          The East Coast mess was not a single thunderstorm problem. The wedge was already being established on Friday; the weekend rain reinforced it; then the Gulf MCV and frontal wave supplied the late lift.
         </div>
       </div>
       <div class="stamp">
@@ -1541,28 +1564,33 @@
   </section>
 
   <section class="slide" id="s2" data-kicker="Timeline" data-number="02/19">
-    <h2>The two-day story: wedge first, MCV second, coastal erosion last.</h2>
-    <p>Forecast discussions from Atlanta, Philadelphia, and New York all point to the same sequence.</p>
-    <div class="timeline">
+    <h2>The four-day story: parent high first, wedge reinforcement second, MCV last.</h2>
+    <p>Forecast discussions from Columbia, Atlanta, Philadelphia, and New York point to a preconditioned event, not a storm system that suddenly appeared on Sunday night.</p>
+    <div class="timeline five">
       <div>
-        <div class="date">SETUP</div>
-        <div class="lead">High pressure dammed cool air against the east side of the mountains.</div>
-        <p>The low-level flow backed onshore/northeasterly along the coastal plain. That made a shallow stable layer, fog, drizzle, and low ceilings.</p>
+        <div class="date">FRI 22</div>
+        <div class="lead">High pressure began building the wedge down the Appalachians.</div>
+        <p>CAE already flagged New England high pressure building down the lee side, with the wedge reaching the Carolinas.</p>
       </div>
       <div>
-        <div class="date">SAT 23 -> SUN 24</div>
-        <div class="lead">Rain and storms helped preserve the wedge.</div>
-        <p>Atlanta forecasters described prior showers/storms reinforcing the CAD wedge across much of Georgia.</p>
+        <div class="date">SAT 23</div>
+        <div class="lead">The boundary stopped behaving like a clean one-time frontal passage.</div>
+        <p>Surface analysis showed frontal clutter from the Southeast into the Mid-Atlantic while cool onshore flow stayed banked against the terrain.</p>
+      </div>
+      <div>
+        <div class="date">SUN 24 DAY</div>
+        <div class="lead">Rain and storms helped preserve the shallow cold dome.</div>
+        <p>FFC later described Saturday's convection as reinforcing and retaining the CAD wedge across north/east Georgia.</p>
       </div>
       <div>
         <div class="date">SUN 24 PM</div>
-        <div class="lead">A Gulf MCV lifted north-northeast.</div>
+        <div class="lead">A Gulf MCV lifted north-northeast into the Appalachians.</div>
         <p>The MCV added mesoscale ascent and organization where the air mass was already moist and conditionally unstable.</p>
       </div>
       <div>
         <div class="date">MON 25 AM</div>
-        <div class="lead">Warm front, cold front, and shortwave approach NYC.</div>
-        <p>OKX expected morning convective showers, but the coastal surface layer remained stable and marine-influenced.</p>
+        <div class="lead">Warm front, cold front, and shortwave approached NYC.</div>
+        <p>OKX expected morning convective showers, but the coastal surface layer still lagged stable and marine-influenced.</p>
       </div>
     </div>
   </section>
@@ -1572,6 +1600,8 @@
     <p>Everything below is UTC first, with Eastern Daylight Time in parentheses. This separates what was observed at briefing time from what was forecast later.</p>
     <div class="evidence-table" aria-label="UTC and EDT evidence timeline">
       <div class="head">Time</div><div class="head">Evidence</div><div class="head">What it proves</div><div class="head">Decision impact</div>
+      <div class="time">22 May 11Z<br>(Fri 7 AM EDT)</div><div>CAE AFD plus WPC surface analysis</div><div>New England high pressure was already forecast to build down the lee of the Appalachians, with CAD extending into the Carolinas.</div><div>Start the case with wedge formation, not with the later Sunday-night radar band.</div>
+      <div class="time">23 May 18Z<br>(Sat 2 PM EDT)</div><div>WPC surface analysis</div><div>The East Coast frontal zone was still messy and slow, with cool side/onshore flow still available to feed the wedge.</div><div>The air mass was being preconditioned before the MCV became the obvious feature.</div>
       <div class="time">24 May 18Z<br>(Sun 2 PM EDT)</div><div>WPC surface analysis plus PHI AFD</div><div>East Coast boundary was still fighting a strong CAD wedge; the warm front had not simply swept north.</div><div>Warm-front placement becomes the forecast hinge, not a background detail.</div>
       <div class="time">25 May 00Z<br>(Sun 8 PM EDT)</div><div>OKX/FFC/IAD/RNK soundings</div><div>NYC had a shallow cool lid at the surface, while 925/850 mb flow was warmer, moist, and southwesterly.</div><div>Surface CIN/stability does not rule out forced/elevated rain, but it does argue against NYC surface-rooted storms.</div>
       <div class="time">25 May 01-03Z<br>(Sun 9-11 PM EDT)</div><div>MRMS loop, METARs, SPC 01Z update</div><div>The active precip band favored the Appalachians/inland PA corridor while NYC stayed cool, low, and mostly non-thunder in observations.</div><div>Radar becomes a route-risk trigger, not proof that the coastal surface layer is convectively usable.</div>
@@ -1581,9 +1611,17 @@
   </section>
 
   <section class="slide" id="s3" data-kicker="Surface analysis" data-number="03/19">
-    <h2>The surface map had the classic CAD fingerprint.</h2>
-    <p>Look for the frontal clutter along the East Coast, high pressure to the north/east side, and a low/wave trying to lift the boundary north.</p>
-    <div class="map-frame">
+    <h2>The surface maps show a loaded pattern before the late radar band.</h2>
+    <p>Look for the high to the north/east side, stalled frontal clutter along the East Coast, and waves trying to lift the boundary north. The May 25 rain rode into a wedge that had already had time to mature.</p>
+    <div class="map-frame surface-sequence">
+      <div class="weather-image">
+        <img src="assets/wpc_surface_20260522_18z.gif" alt="WPC surface analysis 2026-05-22 18Z">
+        <div class="image-caption">WPC surface analysis, 22 May 2026 18Z.</div>
+      </div>
+      <div class="weather-image">
+        <img src="assets/wpc_surface_20260523_18z.gif" alt="WPC surface analysis 2026-05-23 18Z">
+        <div class="image-caption">WPC surface analysis, 23 May 2026 18Z.</div>
+      </div>
       <div class="weather-image">
         <img src="assets/wpc_surface_20260524_18z.gif" alt="WPC surface analysis 2026-05-24 18Z">
         <div class="image-caption">WPC surface analysis, 24 May 2026 18Z.</div>
@@ -1594,10 +1632,10 @@
       </div>
     </div>
     <div class="note-strip">
-      <div class="note">CAD needs shallow cold air plus a damming barrier: Appalachians on the west side, Atlantic feed on the east side.</div>
-      <div class="note">Warm advection over that dome gives lift without needing surface-based parcels.</div>
-      <div class="note">The wedge erodes from south/west first; coastal metro areas often lag.</div>
-      <div class="note">The exact warm-front position controls thunder vs cold rain/drizzle.</div>
+      <div class="note">22 May: parent high and lee-side damming start the stable reservoir.</div>
+      <div class="note">23 May: the baroclinic zone stalls instead of clearing cleanly.</div>
+      <div class="note">24 May: rain and convection reinforce the shallow cool dome.</div>
+      <div class="note">25 May: warm/moist lift arrives over a surface layer that still lags cold.</div>
     </div>
   </section>
 
@@ -2155,6 +2193,7 @@
     <div class="card keyline source-list">
       <h3>Sources used</h3>
       <ul>
+        <li>NWS Columbia/CAE AFD, issued 22 May 2026: New England high pressure building down the lee of the Appalachians, CAD into the Carolinas, and wedge-boundary temperature uncertainty.</li>
         <li>NWS Atlanta/FFC AFDs, issued 24-25 May 2026: CAD wedge, MCV, HiRes/CAM guidance, tall-skinny CAPE discussion.</li>
         <li>NWS New York/OKX AFD, issued 24 May 2026 2357Z: warm front, cold front, shortwave, convective morning showers, PWAT 1.75-2.00 inches.</li>
         <li>NWS Philadelphia/PHI AFD, issued 25 May 2026 0147Z: strong CAD wedge, warm-frontal progression, shortwave/cold-front timing.</li>
@@ -2163,7 +2202,7 @@
         <li>MetPy parcel calculations from the archived OKX sounding for surface, 925 mb, and 850 mb parcel comparisons.</li>
         <li>AviationWeather METAR API: KJFK, KLGA, KTEB, KCDW, KFRG, KABE, KIPT, KATL, KCLT 48-hour observations, sampled hourly for category timelines.</li>
         <li>AviationWeather TAF API: KTEB/KJFK/KISP 0245Z, KABE 0131Z, and KIPT 0212Z May 25 products for the worked go/no-go example.</li>
-        <li>WPC surface analysis archive, NOAA/NWS MRMS base reflectivity image service, OpenStreetMap basemap tiles, and proxy TS/CB validation from METAR text, 24-25 May 2026.</li>
+        <li>WPC surface analysis archive, NOAA/NWS MRMS base reflectivity image service, OpenStreetMap basemap tiles, and proxy TS/CB validation from METAR text, 22-25 May 2026.</li>
       </ul>
     </div>
   </section>

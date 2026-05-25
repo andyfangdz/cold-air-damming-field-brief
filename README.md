@@ -1,6 +1,6 @@
 # Cold Air Damming Field Brief
 
-Web slide deck explaining the May 23-25, 2026 cold-air-damming setup from the Southeast into the New York metro area.
+Web slide deck explaining the May 22-25, 2026 cold-air-damming setup from the Southeast into the New York metro area.
 
 The deck uses:
 
@@ -20,8 +20,9 @@ The deck uses:
 ## Source Traceability
 
 - NWS AFD screenshots: FFC, OKX, PHI products issued May 24-25, 2026.
+- NWS Columbia/CAE AFD text issued May 22, 2026 for the early wedge-formation setup.
 - SPC Day 1 0100Z update: remnant lower/mid-tropospheric MCV moving into the southern Appalachians.
-- WPC surface analyses: May 24 00Z/12Z/18Z and May 25 00Z.
+- WPC surface analyses: May 22 18Z, May 23 18Z, May 24 00Z/12Z/18Z, and May 25 00Z.
 - Soundings: University of Wyoming archive for OKX, FFC, IAD, and RNK at 00Z May 25, 2026.
 - Parcel diagnostics: MetPy calculations from the archived OKX 00Z sounding, comparing surface, 925 mb, and 850 mb parcels.
 - METARs: AviationWeather API 48-hour observations for KJFK, KLGA, KTEB, KCDW, KFRG, KABE, KIPT, KATL, and KCLT.

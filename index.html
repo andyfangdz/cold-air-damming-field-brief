@@ -1386,7 +1386,18 @@
     }
 
     @media (max-width: 900px) {
+      main {
+        height: auto;
+        min-height: 100dvh;
+        overflow-y: visible;
+        scroll-snap-type: none;
+      }
       .slide { padding: 46px 22px; }
+      .slide {
+        display: block;
+        min-height: auto;
+        scroll-snap-align: none;
+      }
       .slide::before { left: 22px; }
       .slide::after { right: 22px; }
       .nav { display: none; }

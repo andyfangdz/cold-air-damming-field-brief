@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cold Air Damming Field Brief - May 23-25, 2026</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
+
+    :root {
+      --paper: #f4f0df;
+      --paper-2: #e8e0c8;
+      --ink: #171914;
+      --muted: #5b5a4f;
+      --rule: #2a2c24;
+      --cold: #2f7ea4;
+      --warm: #c65d32;
+      --moist: #2d8b6f;
+      --storm: #a68d25;
+      --panel: rgba(255, 252, 239, 0.74);
+      --shadow: rgba(27, 25, 17, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      line-height: 1.35;
+      background:
+        linear-gradient(rgba(23, 25, 20, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 25, 20, 0.045) 1px, transparent 1px),
+        var(--paper);
+      background-size: 34px 34px;
+    }
+
+    main {
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .slide {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      padding: 48px 56px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: center;
+      position: relative;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .slide::before {
+      content: attr(data-kicker);
+      position: absolute;
+      top: 22px;
+      left: 56px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .slide::after {
+      content: attr(data-number);
+      position: absolute;
+      top: 22px;
+      right: 56px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    h1 { font-size: 74px; max-width: 1030px; }
+    h2 { font-size: 54px; max-width: 1060px; }
+    h3 { font-size: 28px; }
+
+    p {
+      font-size: 21px;
+      max-width: 980px;
+      color: var(--muted);
+      margin: 20px 0 0;
+    }
+
+    strong { color: var(--ink); }
+    .mono { font-family: "IBM Plex Mono", monospace; }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 8px 12px;
+      margin-bottom: 24px;
+      border-radius: 3px;
+    }
+
+    .title-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .big-claim {
+      margin-top: 36px;
+      border-left: 8px solid var(--warm);
+      padding: 18px 22px;
+      background: rgba(255, 252, 239, 0.62);
+      box-shadow: 0 18px 38px var(--shadow);
+      max-width: 850px;
+      font-size: 25px;
+      color: var(--ink);
+    }
+
+    .stamp {
+      border: 3px solid var(--ink);
+      min-height: 430px;
+      padding: 28px;
+      background: var(--panel);
+      box-shadow: 16px 16px 0 rgba(47, 126, 164, 0.16);
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      transform: rotate(-1deg);
+    }
+
+    .stamp .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 2px dotted rgba(23, 25, 20, 0.35);
+      padding-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .stamp .value {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 2px solid rgba(23, 25, 20, 0.78);
+      border-radius: 6px;
+      padding: 22px;
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li {
+      font-size: 18px;
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+
+    li { margin: 9px 0; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr 1fr 1fr;
+      gap: 0;
+      margin-top: 34px;
+      border: 2px solid var(--ink);
+      background: var(--panel);
+    }
+
+    .timeline > div {
+      padding: 22px;
+      border-right: 2px solid var(--ink);
+      min-height: 230px;
+    }
+
+    .timeline > div:last-child { border-right: 0; }
+
+    .timeline .date {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--warm);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .timeline .lead {
+      font-family: "Newsreader", Georgia, serif;
+      color: var(--ink);
+      font-size: 27px;
+      line-height: 1.06;
+      margin-bottom: 12px;
+    }
+
+    .map-frame {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .weather-image {
+      background: #f9f8ef;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 10px 10px 0 rgba(23, 25, 20, 0.09);
+    }
+
+    .weather-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      min-height: 320px;
+    }
+
+    .image-caption {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 12px;
+      border-top: 1px solid rgba(23, 25, 20, 0.3);
+      background: rgba(244, 240, 223, 0.92);
+    }
+
+    .mechanism {
+      height: 520px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(112, 158, 184, 0.18), rgba(244, 240, 223, 0.1) 38%, rgba(47, 126, 164, 0.24));
+      overflow: hidden;
+      box-shadow: 10px 10px 0 rgba(23, 25, 20, 0.09);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .note-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      color: var(--ink);
+      background: rgba(255, 252, 239, 0.7);
+      border: 1px solid rgba(23, 25, 20, 0.5);
+      border-radius: 4px;
+      padding: 12px;
+    }
+
+    .chart-card {
+      height: 560px;
+      padding: 18px;
+    }
+
+    .chart-card h3 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      background: rgba(255, 252, 239, 0.76);
+      border: 2px solid rgba(23, 25, 20, 0.7);
+      border-radius: 6px;
+      padding: 16px;
+      min-height: 118px;
+    }
+
+    .metric .label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .metric .number {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 44px;
+      color: var(--ink);
+      line-height: 0.95;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 70px 1fr 92px;
+      gap: 14px;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .bar {
+      height: 22px;
+      background: rgba(47, 126, 164, 0.12);
+      border: 1px solid rgba(23, 25, 20, 0.45);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--cold);
+    }
+
+    .source-list a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .source-list li {
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .radar-box {
+      position: relative;
+      height: 560px;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      background:
+        linear-gradient(rgba(23, 25, 20, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 25, 20, 0.05) 1px, transparent 1px),
+        #e9eadb;
+      background-size: 42px 42px;
+    }
+
+    .radar-box img {
+      object-fit: contain;
+      padding: 12px;
+      min-height: 0;
+      height: 100%;
+    }
+
+    .callout {
+      position: absolute;
+      background: rgba(255, 252, 239, 0.9);
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      box-shadow: 5px 5px 0 rgba(23, 25, 20, 0.12);
+    }
+
+    .callout.nyc { right: 26px; top: 110px; border-color: var(--cold); }
+    .callout.pa { left: 120px; top: 205px; border-color: var(--storm); }
+    .callout.app { left: 230px; bottom: 58px; border-color: var(--warm); }
+
+    .nav {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav button {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 rgba(23, 25, 20, 0.18);
+    }
+
+    .small {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .keyline {
+      margin-top: 28px;
+      border-top: 3px solid var(--ink);
+      padding-top: 18px;
+    }
+
+    .source-shot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+      align-items: start;
+    }
+
+    .source-shot-grid.single {
+      grid-template-columns: minmax(0, 1fr) 0.56fr;
+      align-items: stretch;
+    }
+
+    .source-shot {
+      background: rgba(255, 252, 239, 0.82);
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .source-shot img {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      background: #f4f0df;
+    }
+
+    .source-shot figcaption {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid rgba(23, 25, 20, 0.32);
+      background: rgba(255, 252, 239, 0.92);
+    }
+
+    #s3 .weather-image img {
+      min-height: 0;
+      max-height: 360px;
+    }
+
+    #s3 .note-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #s12 .source-shot img {
+      max-height: 486px;
+    }
+
+    @media (max-width: 900px) {
+      .slide { padding: 46px 22px; }
+      .slide::before { left: 22px; }
+      .slide::after { right: 22px; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 38px; }
+      p { font-size: 18px; }
+      .title-grid,
+      .grid-2,
+      .grid-3,
+      .map-frame,
+      .metric-row,
+      .note-strip,
+      .source-shot-grid,
+      .source-shot-grid.single {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+      .timeline > div {
+        border-right: 0;
+        border-bottom: 2px solid var(--ink);
+      }
+      .timeline > div:last-child { border-bottom: 0; }
+      .mechanism,
+      .chart-card,
+      .radar-box { height: 480px; }
+    }
+  </style>
+</head>
+<body>
+<main id="deck">
+  <section class="slide" id="s1" data-kicker="Field brief" data-number="01/13">
+    <div class="title-grid">
+      <div>
+        <span class="eyebrow">May 23-25, 2026 / Southeast to NYC</span>
+        <h1>Cold air damming was the floor. The MCV was the agitator.</h1>
+        <div class="big-claim">
+          The East Coast mess was not a single thunderstorm problem. It was a shallow, stubborn cold dome under warm/moist overrunning, with convection organizing where lift and instability overlapped best: inland and near the Appalachians.
+        </div>
+      </div>
+      <div class="stamp">
+        <div class="row"><span>Primary pattern</span><span class="value">CAD wedge + warm front</span></div>
+        <div class="row"><span>Mobile feature</span><span class="value">Gulf MCV lifting NE</span></div>
+        <div class="row"><span>NYC surface layer</span><span class="value">Stable / IFR / drizzle</span></div>
+        <div class="row"><span>Convective focus</span><span class="value">GA/Carolinas -> Appalachians -> PA</span></div>
+        <div class="row"><span>Forecast hinge</span><span class="value">How far north the warm front gets</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s2" data-kicker="Timeline" data-number="02/13">
+    <h2>The two-day story: wedge first, MCV second, coastal erosion last.</h2>
+    <p>Forecast discussions from Atlanta, Philadelphia, and New York all point to the same sequence.</p>
+    <div class="timeline">
+      <div>
+        <div class="date">SETUP</div>
+        <div class="lead">High pressure dammed cool air against the east side of the mountains.</div>
+        <p>The low-level flow backed onshore/northeasterly along the coastal plain. That made a shallow stable layer, fog, drizzle, and low ceilings.</p>
+      </div>
+      <div>
+        <div class="date">SAT 23 -> SUN 24</div>
+        <div class="lead">Rain and storms helped preserve the wedge.</div>
+        <p>Atlanta forecasters described prior showers/storms reinforcing the CAD wedge across much of Georgia.</p>
+      </div>
+      <div>
+        <div class="date">SUN 24 PM</div>
+        <div class="lead">A Gulf MCV lifted north-northeast.</div>
+        <p>The MCV added mesoscale ascent and organization where the air mass was already moist and conditionally unstable.</p>
+      </div>
+      <div>
+        <div class="date">MON 25 AM</div>
+        <div class="lead">Warm front, cold front, and shortwave approach NYC.</div>
+        <p>OKX expected morning convective showers, but the coastal surface layer remained stable and marine-influenced.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s3" data-kicker="Surface analysis" data-number="03/13">
+    <h2>The surface map had the classic CAD fingerprint.</h2>
+    <p>Look for the frontal clutter along the East Coast, high pressure to the north/east side, and a low/wave trying to lift the boundary north.</p>
+    <div class="map-frame">
+      <div class="weather-image">
+        <img src="assets/wpc_surface_20260524_18z.gif" alt="WPC surface analysis 2026-05-24 18Z">
+        <div class="image-caption">WPC surface analysis, 24 May 2026 18Z.</div>
+      </div>
+      <div class="weather-image">
+        <img src="assets/wpc_surface_20260525_00z.gif" alt="WPC surface analysis 2026-05-25 00Z">
+        <div class="image-caption">WPC surface analysis, 25 May 2026 00Z.</div>
+      </div>
+    </div>
+    <div class="note-strip">
+      <div class="note">CAD needs shallow cold air plus a damming barrier: Appalachians on the west side, Atlantic feed on the east side.</div>
+      <div class="note">Warm advection over that dome gives lift without needing surface-based parcels.</div>
+      <div class="note">The wedge erodes from south/west first; coastal metro areas often lag.</div>
+      <div class="note">The exact warm-front position controls thunder vs cold rain/drizzle.</div>
+    </div>
+  </section>
+
+  <section class="slide" id="s4" data-kicker="Mechanism" data-number="04/13">
+    <h2>Cross-section: the cold dome is shallow, but it changes everything.</h2>
+    <p>The surface parcel in NYC is trapped under an inversion. The active parcels are either lifted above the wedge, or rooted where the wedge has eroded inland/southwest.</p>
+    <div class="mechanism">
+      <svg viewBox="0 0 1100 520" role="img" aria-label="Cold air damming cross-section">
+        <defs>
+          <marker id="arrowWarm" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#c65d32"></path>
+          </marker>
+          <marker id="arrowCold" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#2f7ea4"></path>
+          </marker>
+          <marker id="arrowInk" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#171914"></path>
+          </marker>
+        </defs>
+        <rect x="0" y="0" width="1100" height="520" fill="rgba(255,252,239,0.34)"></rect>
+        <path d="M0 412 C110 390, 175 330, 260 246 C335 168, 390 142, 454 216 C520 294, 580 373, 690 397 C810 424, 962 414, 1100 408 L1100 520 L0 520 Z" fill="#4f4f38" opacity="0.22"></path>
+        <path d="M0 420 C118 402, 186 342, 260 260 C334 176, 386 158, 444 224 C511 300, 578 381, 690 402 C804 424, 957 416, 1100 412" fill="none" stroke="#171914" stroke-width="4"></path>
+        <text x="220" y="225" font-family="IBM Plex Mono" font-size="16" fill="#171914">Appalachians</text>
+        <text x="730" y="435" font-family="IBM Plex Mono" font-size="16" fill="#171914">Coastal plain / NYC</text>
+        <path d="M650 398 C725 356, 795 323, 868 310 C950 296, 1024 302, 1100 316 L1100 520 L650 520 Z" fill="#2f7ea4" opacity="0.36"></path>
+        <path d="M642 398 C718 356, 796 323, 872 310 C955 296, 1024 302, 1100 316" fill="none" stroke="#2f7ea4" stroke-width="5"></path>
+        <text x="765" y="374" font-family="Newsreader" font-size="34" fill="#174f6a">stable CAD wedge</text>
+        <text x="805" y="402" font-family="IBM Plex Mono" font-size="15" fill="#174f6a">cool / saturated / low ceilings</text>
+        <path d="M238 360 C370 314, 526 270, 690 246 C842 225, 974 228, 1100 250" fill="none" stroke="#c65d32" stroke-width="6" marker-end="url(#arrowWarm)"></path>
+        <path d="M175 318 C342 266, 510 226, 672 204 C816 184, 950 188, 1060 210" fill="none" stroke="#c65d32" stroke-width="4" opacity="0.72" marker-end="url(#arrowWarm)"></path>
+        <text x="520" y="188" font-family="Newsreader" font-size="34" fill="#8a3d20">warm/moist overrunning</text>
+        <text x="548" y="217" font-family="IBM Plex Mono" font-size="15" fill="#8a3d20">isentropic lift over the cold dome</text>
+        <circle cx="338" cy="166" r="50" fill="none" stroke="#a68d25" stroke-width="6"></circle>
+        <path d="M315 145 C350 122, 386 148, 364 182 C344 213, 291 199, 302 160" fill="none" stroke="#a68d25" stroke-width="4" marker-end="url(#arrowInk)"></path>
+        <text x="275" y="82" font-family="Newsreader" font-size="34" fill="#7a6819">MCV</text>
+        <text x="196" y="112" font-family="IBM Plex Mono" font-size="15" fill="#6b5b18">mid-level spin adds ascent</text>
+        <path d="M418 300 C444 255, 465 230, 490 203" fill="none" stroke="#171914" stroke-width="4" marker-end="url(#arrowInk)"></path>
+        <path d="M490 288 C518 242, 543 214, 575 186" fill="none" stroke="#171914" stroke-width="4" marker-end="url(#arrowInk)"></path>
+        <path d="M575 282 C605 239, 636 213, 680 192" fill="none" stroke="#171914" stroke-width="4" marker-end="url(#arrowInk)"></path>
+        <text x="425" y="340" font-family="IBM Plex Mono" font-size="15" fill="#171914">lift strongest where terrain/frontal ascent + moisture + less inhibition overlap</text>
+        <path d="M900 462 C955 454, 1006 454, 1060 462" fill="none" stroke="#2f7ea4" stroke-width="5" marker-end="url(#arrowCold)"></path>
+        <text x="902" y="490" font-family="IBM Plex Mono" font-size="14" fill="#174f6a">surface parcels blocked</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="slide" id="s5" data-kicker="Soundings" data-number="05/13">
+    <h2>The 00Z soundings separate the two air masses.</h2>
+    <p>OKX had a cool surface layer with a low-level inversion and no surface-based CAPE. FFC/RNK were warmer, moister, and much closer to convective.</p>
+    <div class="grid-2">
+      <div class="card chart-card">
+        <h3>Temperature profiles, 00Z 25 May</h3>
+        <svg id="soundingChart" viewBox="0 0 620 500" aria-label="Temperature sounding comparison"></svg>
+      </div>
+      <div>
+        <div class="metric-row">
+          <div class="metric">
+            <div class="label">OKX LI</div>
+            <div class="number">+12.3</div>
+            <div class="small">strongly stable</div>
+          </div>
+          <div class="metric">
+            <div class="label">OKX CAPE</div>
+            <div class="number">0</div>
+            <div class="small">surface based</div>
+          </div>
+          <div class="metric">
+            <div class="label">OKX PWAT</div>
+            <div class="number">41.7</div>
+            <div class="small">mm, very moist</div>
+          </div>
+          <div class="metric">
+            <div class="label">FFC CAPE</div>
+            <div class="number">649</div>
+            <div class="small">J/kg</div>
+          </div>
+        </div>
+        <div class="card keyline">
+          <h3>Interpretation</h3>
+          <ul>
+            <li><strong>NYC:</strong> stable marine/CAD layer at the ground. Showers can be forced/elevated, but robust surface-based storms are disfavored.</li>
+            <li><strong>Georgia/Appalachians:</strong> warmer/moister profiles, an MCV, and lower inhibition. That is where convective organization makes sense.</li>
+            <li><strong>The trap:</strong> high PWAT can make weak convection look impactful on radar and in the cockpit, even when severe potential is low.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s6" data-kicker="METAR evidence" data-number="06/13">
+    <h2>The wedge showed up as hours of low ceilings, not just a model idea.</h2>
+    <p>Recent METARs captured the shallow cold dome: cool temperatures, easterly/northeasterly surface winds, drizzle/fog, and IFR ceilings across NYC/northern NJ/eastern PA.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Low-ceiling persistence in the 48-hour METAR pull</h3>
+        <div class="bar-list">
+          <div class="bar-row"><strong>KCDW</strong><div class="bar"><span style="width:76%"></span></div><span>54 obs</span></div>
+          <div class="bar-row"><strong>KCLT</strong><div class="bar"><span style="width:35%"></span></div><span>25 obs</span></div>
+          <div class="bar-row"><strong>KATL</strong><div class="bar"><span style="width:35%"></span></div><span>25 obs</span></div>
+          <div class="bar-row"><strong>KJFK</strong><div class="bar"><span style="width:32%"></span></div><span>23 obs</span></div>
+          <div class="bar-row"><strong>KABE</strong><div class="bar"><span style="width:30%"></span></div><span>21 obs</span></div>
+          <div class="bar-row"><strong>KIPT</strong><div class="bar"><span style="width:4%"></span></div><span>3 obs</span></div>
+        </div>
+        <p class="small">Count of reports with ceiling at or below 1,000 ft from AviationWeather 48-hour METAR API. Counts are not normalized by station reporting frequency.</p>
+      </div>
+      <div class="card">
+        <h3>Near 02Z 25 May: the coastal side was still wedged</h3>
+        <ul>
+          <li><strong>KJFK:</strong> 13/13 deg C, OVC005, northeasterly wind, drizzle earlier.</li>
+          <li><strong>KLGA:</strong> 13/12 deg C, BKN004/OVC009, drizzle and mist.</li>
+          <li><strong>KTEB:</strong> 13/12 deg C, 2 SM light rain/mist, OVC005.</li>
+          <li><strong>KCDW:</strong> 13/13 deg C, OVC006, east-southeast wind.</li>
+          <li><strong>KCLT:</strong> 22/21 deg C with TSRA and CB - much closer to the active convective air mass.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s7" data-kicker="Radar check" data-number="07/13">
+    <h2>At 02:28Z, the convection was mostly inland and west.</h2>
+    <p>That matches your radar read: the forcing/instability overlap was not centered on NYC yet. NYC was downstream under the stable marine side.</p>
+    <div class="weather-image radar-box">
+      <img src="assets/radar_east_20260525_0228z.png" alt="NCEP radar reflectivity mosaic 2026-05-25 02:28Z">
+      <div class="callout nyc">NYC: little/no reflectivity sampled</div>
+      <div class="callout pa">Central/western PA: active returns</div>
+      <div class="callout app">Terrain/frontal zone: better lift overlap</div>
+      <div class="image-caption">NCEP CONUS base-reflectivity mosaic via WMS, 25 May 2026 02:28Z.</div>
+    </div>
+  </section>
+
+  <section class="slide" id="s8" data-kicker="Lift sources" data-number="08/13">
+    <h2>Where did the lift come from?</h2>
+    <p>Not one magic trigger. It was stacked, with each layer helping a different part of the storm shield.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Isentropic upglide</h3>
+        <p>Warm/moist southwesterly flow was forced up and over the shallow CAD dome. This supports broad rain and embedded elevated convection.</p>
+      </div>
+      <div class="card">
+        <h3>2. MCV ascent</h3>
+        <p>The remnant Gulf vortex supplied mid-level spin and mesoscale lift. It helped organize convection across GA/Carolinas/Appalachians.</p>
+      </div>
+      <div class="card">
+        <h3>3. Front/shortwave forcing</h3>
+        <p>By Monday morning, a low, warm front, trailing cold front, and shortwave were all moving into the Mid-Atlantic/Northeast.</p>
+      </div>
+    </div>
+    <div class="card keyline">
+      <h3>The important distinction</h3>
+      <p><strong>Lift exists over NYC, but instability does not line up as well at the surface.</strong> West of the Appalachians and near the Piedmont, lift and usable instability overlap better, so the convection is more obvious there first.</p>
+    </div>
+  </section>
+
+  <section class="slide" id="s9" data-kicker="NYC interpretation" data-number="09/13">
+    <h2>So why can NYC get thunder at all?</h2>
+    <p>Because thunder does not require the surface parcel to be the storm parcel.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>What blocks surface storms</h3>
+        <ul>
+          <li>Cold, saturated surface layer.</li>
+          <li>Low-level inversion/warm nose above the surface.</li>
+          <li>Marine easterly flow keeps the boundary layer cool.</li>
+          <li>Surface-based CAPE at OKX: effectively zero at 00Z.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What can still produce thunder</h3>
+        <ul>
+          <li>Lifted parcels above the cold dome, roughly 925-800 mb.</li>
+          <li>Convective rain bands advecting in from inland.</li>
+          <li>Shortwave/frontal ascent deepening the saturated layer.</li>
+          <li>Very high moisture makes even weak cells efficient.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="big-claim">Best short version: NYC is not the storm engine. NYC is under the cold lid, waiting for the conveyor belt to throw rain and maybe elevated thunder over the top.</div>
+  </section>
+
+  <section class="slide" id="s10" data-kicker="Takeaways" data-number="10/13">
+    <h2>Pilot-weather lessons from this case.</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Do not read radar alone</h3>
+        <p>Radar showed where the convection was, but the sounding explained why it was not rooted near NYC.</p>
+      </div>
+      <div class="card">
+        <h3>CAD creates false simplicity</h3>
+        <p>The surface looks uniformly miserable: fog, drizzle, IFR. Aloft, the air mass can be doing something completely different.</p>
+      </div>
+      <div class="card">
+        <h3>The warm front is the hinge</h3>
+        <p>A 50-100 mile warm-front error can flip the forecast from cold stratiform rain to embedded convective downpours.</p>
+      </div>
+    </div>
+    <div class="card keyline source-list">
+      <h3>Sources used</h3>
+      <ul>
+        <li>NWS Atlanta/FFC AFDs, issued 24-25 May 2026: CAD wedge, MCV, HiRes/CAM guidance, tall-skinny CAPE discussion.</li>
+        <li>NWS New York/OKX AFD, issued 24 May 2026 2357Z: warm front, cold front, shortwave, convective morning showers, PWAT 1.75-2.00 inches.</li>
+        <li>NWS Philadelphia/PHI AFD, issued 25 May 2026 0147Z: strong CAD wedge, warm-frontal progression, shortwave/cold-front timing.</li>
+        <li>University of Wyoming sounding archive: OKX, FFC, IAD, RNK 00Z 25 May 2026 soundings.</li>
+        <li>AviationWeather METAR API: KJFK, KLGA, KTEB, KCDW, KABE, KIPT, KATL, KCLT 48-hour observations.</li>
+        <li>WPC surface analysis archive and NCEP CONUS radar WMS, 24-25 May 2026.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide" id="s11" data-kicker="Source screenshots" data-number="11/13">
+    <h2>AFD source captures: CAD wedge plus MCV.</h2>
+    <p>These are browser screenshots from the NWS product pages, trimmed to the relevant paragraphs and highlighted for the terms that matter.</p>
+    <div class="source-shot-grid">
+      <figure class="source-shot">
+        <img src="assets/screenshots/afd-ffc-cad-mcv.png" alt="NWS Atlanta AFD screenshot showing CAD wedge and remnant Gulf MCV">
+        <figcaption>FFC AFD: prior storms reinforce/retain CAD wedge; remnant Gulf MCV boosts organized convection.</figcaption>
+      </figure>
+      <figure class="source-shot">
+        <img src="assets/screenshots/afd-phi-cad-wedge.png" alt="NWS Philadelphia AFD screenshot showing strong CAD wedge and warm front">
+        <figcaption>PHI AFD: strong CAD wedge still as far south as northern Georgia/South Carolina; warm front must surge north.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="slide" id="s12" data-kicker="Source screenshots" data-number="12/13">
+    <h2>AFD source capture: NYC gets forced rain, not surface-rooted storms.</h2>
+    <p>OKX framed Monday morning as a warm-front/cold-front/shortwave event with very high precipitable water.</p>
+    <div class="source-shot-grid single">
+      <figure class="source-shot">
+        <img src="assets/screenshots/afd-okx-fronts-pwat.png" alt="NWS New York AFD screenshot showing warm front cold front shortwave and PWATs">
+        <figcaption>OKX AFD: warm front north, cold front through, shortwave aloft, convective showers, PWATs 1.75-2.00 inches.</figcaption>
+      </figure>
+      <div class="card">
+        <h3>How to read this with the sounding</h3>
+        <ul>
+          <li>The AFD explains <strong>forcing and moisture</strong>.</li>
+          <li>The OKX sounding explains <strong>why the surface layer was still hostile</strong>.</li>
+          <li>Together: elevated/forced showers make sense, while robust surface-based NYC convection does not.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s13" data-kicker="Source screenshots" data-number="13/13">
+    <h2>AviationWeather screenshots: the surface reports tell the story.</h2>
+    <p>The raw METAR pages show the contrast: NYC stuck in cool IFR/drizzle while Charlotte/Atlanta had warmer, more convective observations nearby.</p>
+    <div class="source-shot-grid">
+      <figure class="source-shot">
+        <img src="assets/screenshots/awc-metar-nyc-wedge.png" alt="AviationWeather METAR screenshot for NYC metro showing low ceilings and drizzle">
+        <figcaption>AviationWeather METARs, NYC metro: OVC005/006, drizzle, rain, mist, cool 13/13 deg C profiles.</figcaption>
+      </figure>
+      <figure class="source-shot">
+        <img src="assets/screenshots/awc-metar-south-appalachians.png" alt="AviationWeather METAR screenshot for CLT ATL IPI ABE showing thunderstorm and convective observations">
+        <figcaption>AviationWeather METARs, inland/south: CLT TSRA/CB and ATL convective cloud/rain history near the active MCV corridor.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<div class="nav" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous slide">up</button>
+  <button type="button" id="next" aria-label="Next slide">dn</button>
+</div>
+
+<script>
+  const deck = document.getElementById("deck");
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const go = (delta) => {
+    const y = deck.scrollTop;
+    const idx = Math.max(0, Math.min(slides.length - 1, Math.round(y / window.innerHeight) + delta));
+    slides[idx].scrollIntoView({ behavior: "smooth" });
+  };
+
+  document.getElementById("prev").addEventListener("click", () => go(-1));
+  document.getElementById("next").addEventListener("click", () => go(1));
+  window.addEventListener("keydown", (event) => {
+    if (["ArrowDown", "PageDown", " "].includes(event.key)) { event.preventDefault(); go(1); }
+    if (["ArrowUp", "PageUp"].includes(event.key)) { event.preventDefault(); go(-1); }
+  });
+
+  const profiles = {
+    OKX: {
+      color: "#2f7ea4",
+      points: [
+        {h:20,t:13.8,d:13.5}, {h:198,t:12.2,d:11.6}, {h:384,t:11.4,d:10.8},
+        {h:610,t:14.2,d:13.9}, {h:810,t:16.6,d:16.6}, {h:856,t:16.4,d:16.4},
+        {h:1572,t:12.2,d:11.4}, {h:3179,t:4.0,d:3.4}, {h:5850,t:-9.7,d:-16.7}
+      ]
+    },
+    FFC: {
+      color: "#c65d32",
+      points: [
+        {h:245,t:24.0,d:22.3}, {h:822,t:21.2,d:17.6}, {h:1549,t:16.2,d:14.2},
+        {h:3175,t:6.8,d:5.3}, {h:5870,t:-8.5,d:-9.3}
+      ]
+    },
+    RNK: {
+      color: "#a68d25",
+      points: [
+        {h:654,t:19.0,d:19.0}, {h:836,t:18.2,d:16.1}, {h:1556,t:14.0,d:13.4},
+        {h:3172,t:6.6,d:3.2}, {h:5850,t:-9.9,d:-11.2}
+      ]
+    }
+  };
+
+  function drawSounding() {
+    const svg = document.getElementById("soundingChart");
+    const w = 620, h = 500, m = {l:62, r:24, t:26, b:48};
+    const xMin = -20, xMax = 30, yMin = 0, yMax = 6200;
+    const x = (temp) => m.l + (temp - xMin) / (xMax - xMin) * (w - m.l - m.r);
+    const y = (height) => h - m.b - (height - yMin) / (yMax - yMin) * (h - m.t - m.b);
+    const el = (name, attrs = {}, text = "") => {
+      const node = document.createElementNS("http://www.w3.org/2000/svg", name);
+      Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+      if (text) node.textContent = text;
+      svg.appendChild(node);
+      return node;
+    };
+
+    svg.innerHTML = "";
+    el("rect", {x:0, y:0, width:w, height:h, fill:"rgba(255,252,239,0.68)"});
+    el("rect", {x:x(9.5), y:y(950), width:x(18)-x(9.5), height:y(0)-y(950), fill:"#2f7ea4", opacity:"0.14"});
+    el("text", {x:x(10.2), y:y(520), "font-family":"IBM Plex Mono", "font-size":12, fill:"#174f6a"}, "OKX inversion");
+
+    for (let temp = -20; temp <= 30; temp += 10) {
+      el("line", {x1:x(temp), y1:m.t, x2:x(temp), y2:h-m.b, stroke:"#171914", "stroke-width":1, opacity:0.18});
+      el("text", {x:x(temp)-10, y:h-18, "font-family":"IBM Plex Mono", "font-size":12, fill:"#5b5a4f"}, String(temp));
+    }
+    for (let height = 0; height <= 6000; height += 1000) {
+      el("line", {x1:m.l, y1:y(height), x2:w-m.r, y2:y(height), stroke:"#171914", "stroke-width":1, opacity:0.18});
+      el("text", {x:10, y:y(height)+4, "font-family":"IBM Plex Mono", "font-size":12, fill:"#5b5a4f"}, `${height/1000} km`);
+    }
+    el("line", {x1:m.l, y1:m.t, x2:m.l, y2:h-m.b, stroke:"#171914", "stroke-width":2});
+    el("line", {x1:m.l, y1:h-m.b, x2:w-m.r, y2:h-m.b, stroke:"#171914", "stroke-width":2});
+
+    Object.entries(profiles).forEach(([name, profile]) => {
+      const tempPath = profile.points.map((p, i) => `${i ? "L" : "M"} ${x(p.t).toFixed(1)} ${y(p.h).toFixed(1)}`).join(" ");
+      const dewPath = profile.points.map((p, i) => `${i ? "L" : "M"} ${x(p.d).toFixed(1)} ${y(p.h).toFixed(1)}`).join(" ");
+      el("path", {d:dewPath, fill:"none", stroke:profile.color, "stroke-width":2, opacity:0.45, "stroke-dasharray":"5 5"});
+      el("path", {d:tempPath, fill:"none", stroke:profile.color, "stroke-width":4, "stroke-linejoin":"round", "stroke-linecap":"round"});
+    });
+
+    el("text", {x:m.l, y:18, "font-family":"IBM Plex Mono", "font-size":12, fill:"#5b5a4f"}, "solid = temperature, dashed = dewpoint");
+    el("text", {x:w-118, y:h-18, "font-family":"IBM Plex Mono", "font-size":12, fill:"#5b5a4f"}, "temp deg C");
+    [["OKX", profiles.OKX.color], ["FFC", profiles.FFC.color], ["RNK", profiles.RNK.color]].forEach(([name, color], i) => {
+      const lx = 430 + i * 54;
+      el("line", {x1:lx, y1:18, x2:lx+24, y2:18, stroke:color, "stroke-width":4, "stroke-linecap":"round"});
+      el("text", {x:lx+30, y:22, "font-family":"IBM Plex Mono", "font-size":12, fill:color, "font-weight":700}, name);
+    });
+  }
+  drawSounding();
+</script>
+</body>
+</html>

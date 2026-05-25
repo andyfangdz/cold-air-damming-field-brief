@@ -1,0 +1,5 @@
+.vercel/
+*.tar.gz
+*.zip
+node_modules/
+

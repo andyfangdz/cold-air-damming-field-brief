@@ -314,8 +314,8 @@
 
     .metric-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
       margin-top: 18px;
     }
 
@@ -323,7 +323,7 @@
       background: rgba(255, 252, 239, 0.76);
       border: 2px solid rgba(23, 25, 20, 0.7);
       border-radius: 6px;
-      padding: 16px;
+      padding: 14px;
       min-height: 118px;
     }
 
@@ -337,7 +337,7 @@
 
     .metric .number {
       font-family: "Newsreader", Georgia, serif;
-      font-size: 44px;
+      font-size: 40px;
       color: var(--ink);
       line-height: 0.95;
     }
@@ -379,6 +379,612 @@
     .source-list li {
       font-size: 17px;
       color: var(--muted);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .proof-card {
+      background: rgba(255, 252, 239, 0.76);
+      border: 2px solid rgba(23, 25, 20, 0.78);
+      border-radius: 6px;
+      padding: 18px;
+      box-shadow: 7px 7px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .proof-card .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 8px;
+      border-radius: 3px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .proof-card .value {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 36px;
+      line-height: 0.98;
+      color: var(--ink);
+    }
+
+    .proof-card p {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .station-map {
+      position: relative;
+      min-height: 492px;
+      overflow: hidden;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background:
+        linear-gradient(115deg, rgba(47, 126, 164, 0.28) 0 52%, rgba(198, 93, 50, 0.2) 52% 100%),
+        rgba(255, 252, 239, 0.75);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .station-map::before {
+      content: "wedge nose / warm front zone";
+      position: absolute;
+      left: 32px;
+      top: 222px;
+      width: 78%;
+      border-top: 4px dashed rgba(23, 25, 20, 0.55);
+      transform: rotate(-13deg);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    .station-chip {
+      position: absolute;
+      width: 168px;
+      padding: 10px 12px;
+      border: 2px solid var(--ink);
+      border-radius: 5px;
+      background: rgba(255, 252, 239, 0.9);
+      box-shadow: 5px 5px 0 rgba(23, 25, 20, 0.08);
+      font-size: 13px;
+    }
+
+    .station-chip.warm {
+      border-color: var(--warm);
+      background: rgba(255, 239, 224, 0.9);
+    }
+
+    .station-chip .icao {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .station-chip .met {
+      margin-top: 5px;
+      color: var(--muted);
+    }
+
+    .radar-checklist {
+      display: grid;
+      gap: 12px;
+    }
+
+    .radar-step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 2px solid rgba(23, 25, 20, 0.72);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.72);
+    }
+
+    .radar-step .num {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .radar-step h3 {
+      font-size: 23px;
+    }
+
+    .radar-step p {
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .lift-diagnosis {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .lift-map {
+      min-height: 540px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background:
+        linear-gradient(135deg, rgba(47, 126, 164, 0.22), rgba(255, 252, 239, 0.62) 50%, rgba(198, 93, 50, 0.18)),
+        rgba(255, 252, 239, 0.78);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+      overflow: hidden;
+    }
+
+    .lift-card-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .lift-card {
+      padding: 16px;
+      border: 2px solid rgba(23, 25, 20, 0.72);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.74);
+    }
+
+    .lift-card .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--warm);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .lift-card h3 {
+      font-size: 24px;
+    }
+
+    .lift-card p {
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .layer-table {
+      display: grid;
+      grid-template-columns: 0.88fr 0.92fr 0.92fr 0.92fr 1fr;
+      margin-top: 22px;
+      border: 2px solid var(--ink);
+      background: rgba(255, 252, 239, 0.7);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .layer-table > div {
+      padding: 10px 12px;
+      border-right: 1px solid rgba(23, 25, 20, 0.42);
+      border-bottom: 1px solid rgba(23, 25, 20, 0.42);
+      font-size: 15px;
+    }
+
+    .layer-table > div:nth-child(5n) { border-right: 0; }
+    .layer-table > div:nth-last-child(-n+5) { border-bottom: 0; }
+    .layer-table .head {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      background: rgba(47, 126, 164, 0.12);
+    }
+
+    #s3b .proof-grid {
+      margin-top: 22px;
+    }
+
+    #s3b .proof-card {
+      padding: 16px;
+    }
+
+    #s3b .layer-table {
+      margin-top: 18px;
+    }
+
+    #s3b .layer-table > div {
+      padding: 8px 10px;
+    }
+
+    #s3b .big-claim {
+      margin-top: 28px;
+      padding: 16px 20px;
+      font-size: 24px;
+    }
+
+    .parcel-table {
+      display: grid;
+      grid-template-columns: 0.95fr 0.78fr 0.78fr 0.82fr 1.28fr;
+      margin-top: 18px;
+      border: 2px solid var(--ink);
+      background: rgba(255, 252, 239, 0.7);
+    }
+
+    .parcel-table > div {
+      padding: 9px 10px;
+      border-right: 1px solid rgba(23, 25, 20, 0.42);
+      border-bottom: 1px solid rgba(23, 25, 20, 0.42);
+      font-size: 14px;
+    }
+
+    .parcel-table > div:nth-child(5n) { border-right: 0; }
+    .parcel-table > div:nth-last-child(-n+5) { border-bottom: 0; }
+    .parcel-table .head {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      background: rgba(198, 93, 50, 0.1);
+    }
+
+    .parcel-inset {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 2px solid var(--ink);
+      border-radius: 5px;
+      background: rgba(47, 126, 164, 0.08);
+    }
+
+    .parcel-inset h4 {
+      margin: 0 0 6px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .parcel-inset svg {
+      display: block;
+      width: 100%;
+      height: 138px;
+    }
+
+    .parcel-inset text {
+      font-family: "IBM Plex Mono", monospace;
+      fill: var(--ink);
+    }
+
+    .scenario-card {
+      min-height: 0;
+    }
+
+    .scenario-card h3 {
+      font-size: 24px;
+    }
+
+    #s5 .note-strip {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 14px;
+    }
+
+    #s5 .chart-card {
+      height: 500px;
+    }
+
+    #s5 .metric {
+      min-height: 0;
+      padding: 8px;
+    }
+
+    #s5 .metric .label {
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+
+    #s5 .metric .number {
+      font-size: 32px;
+    }
+
+    #s5 .metric .small {
+      font-size: 11px;
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+
+    #s5 .parcel-table > div {
+      padding: 4px 6px;
+      font-size: 12px;
+    }
+
+    #s5 p.small {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    #s5 .parcel-inset svg {
+      height: 112px;
+    }
+
+    #s5 .note {
+      padding: 9px;
+      font-size: 12px;
+    }
+
+    #s7 .radar-loop-card {
+      height: 480px;
+    }
+
+    #s7 .note-strip {
+      margin-top: 12px;
+    }
+
+    #s7 .note {
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    #s7 .proxy-warning {
+      margin-top: 10px;
+      font-size: 13px;
+      max-width: none;
+    }
+
+    #s6 .card {
+      padding: 18px;
+    }
+
+    #s6 .ceiling-timeline {
+      margin-top: 18px;
+      gap: 7px;
+    }
+
+    #s6 .cat-strip {
+      height: 15px;
+    }
+
+    #s6 p.small {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    .ceiling-timeline {
+      margin-top: 26px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .ceiling-row {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr) 130px;
+      gap: 12px;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+
+    .cat-strip {
+      display: grid;
+      grid-template-columns: repeat(32, minmax(4px, 1fr));
+      gap: 2px;
+      height: 18px;
+    }
+
+    .cat {
+      border: 1px solid rgba(23, 25, 20, 0.18);
+      border-radius: 2px;
+    }
+
+    .cat.v { background: #8fbf78; }
+    .cat.m { background: #d3b64b; }
+    .cat.i { background: #c65d32; }
+    .cat.l { background: #8d2d24; }
+
+    .ceiling-axis,
+    .legend {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .legend span {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      margin-right: 4px;
+      vertical-align: -1px;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .decision-card {
+      min-height: 238px;
+      padding: 15px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.76);
+      box-shadow: 7px 7px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .decision-card .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--warm);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .decision-card h3 {
+      font-size: 22px;
+    }
+
+    .decision-card p {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .briefing-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .brief-card {
+      min-height: 202px;
+      padding: 13px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.76);
+      box-shadow: 6px 6px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .brief-card .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--cold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .brief-card h3 {
+      font-size: 19px;
+    }
+
+    .brief-card p {
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .uncertainty-row {
+      display: grid;
+      grid-template-columns: 0.58fr repeat(5, 1fr);
+      gap: 0;
+      margin-top: 18px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255, 252, 239, 0.72);
+    }
+
+    .uncertainty-row div {
+      padding: 10px;
+      border-right: 1px solid rgba(23, 25, 20, 0.38);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+
+    .uncertainty-row div:last-child {
+      border-right: 0;
+    }
+
+    .uncertainty-row .label {
+      background: rgba(198, 93, 50, 0.12);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--warm);
+    }
+
+    .worked-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .route-table {
+      display: grid;
+      grid-template-columns: 0.74fr 1fr 1fr 1fr;
+      border: 2px solid var(--ink);
+      background: rgba(255, 252, 239, 0.74);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .route-table > div {
+      padding: 9px 10px;
+      border-right: 1px solid rgba(23, 25, 20, 0.42);
+      border-bottom: 1px solid rgba(23, 25, 20, 0.42);
+      font-size: 14px;
+    }
+
+    .route-table > div:nth-child(4n) { border-right: 0; }
+    .route-table > div:nth-last-child(-n+4) { border-bottom: 0; }
+    .route-table .head {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(47, 126, 164, 0.12);
+    }
+
+    .decision-stamp {
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 20px;
+      border: 3px solid var(--ink);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.78);
+      box-shadow: 10px 10px 0 rgba(198, 93, 50, 0.12);
+    }
+
+    .decision-stamp .verdict {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 50px;
+      line-height: 0.95;
+      color: var(--warm);
+    }
+
+    .decision-stamp p {
+      font-size: 17px;
+      margin-top: 0;
+    }
+
+    .validation-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .validation-row div {
+      padding: 10px;
+      border: 1px solid rgba(23, 25, 20, 0.5);
+      border-radius: 4px;
+      background: rgba(255, 252, 239, 0.72);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--ink);
     }
 
     .radar-box {
@@ -606,9 +1212,17 @@
       .title-grid,
       .grid-2,
       .grid-3,
+      .proof-grid,
+      .diagnostic-grid,
+      .lift-diagnosis,
+      .validation-row,
       .map-frame,
       .metric-row,
       .note-strip,
+      .decision-grid,
+      .briefing-grid,
+      .uncertainty-row,
+      .worked-grid,
       .source-shot-grid,
       .source-shot-grid.single {
         grid-template-columns: 1fr;
@@ -632,12 +1246,63 @@
       .radar-note {
         grid-column: 1 / -1;
       }
+      .layer-table,
+      .parcel-table {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      .route-table {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .layer-table > div,
+      .parcel-table > div,
+      .route-table > div {
+        padding: 6px 5px;
+        font-size: 10px;
+        overflow-wrap: anywhere;
+      }
+      .layer-table .head,
+      .parcel-table .head,
+      .route-table .head {
+        font-size: 9px;
+      }
+      .parcel-inset svg {
+        height: 170px;
+      }
+      .uncertainty-row div {
+        border-right: 0;
+        border-bottom: 1px solid rgba(23, 25, 20, 0.32);
+      }
+      .uncertainty-row div:last-child {
+        border-bottom: 0;
+      }
+      .station-map {
+        min-height: 560px;
+      }
+      .lift-map {
+        min-height: 420px;
+      }
+      .station-map::before {
+        left: -8px;
+        top: 292px;
+        width: 112%;
+        transform: rotate(-28deg);
+      }
+      .station-chip {
+        width: 142px;
+        font-size: 12px;
+      }
+      .ceiling-row {
+        grid-template-columns: 48px minmax(0, 1fr);
+      }
+      .ceiling-row .small {
+        grid-column: 2;
+      }
     }
   </style>
 </head>
 <body>
 <main id="deck">
-  <section class="slide" id="s1" data-kicker="Field brief" data-number="01/13">
+  <section class="slide" id="s1" data-kicker="Field brief" data-number="01/19">
     <div class="title-grid">
       <div>
         <span class="eyebrow">May 23-25, 2026 / Southeast to NYC</span>
@@ -656,7 +1321,7 @@
     </div>
   </section>
 
-  <section class="slide" id="s2" data-kicker="Timeline" data-number="02/13">
+  <section class="slide" id="s2" data-kicker="Timeline" data-number="02/19">
     <h2>The two-day story: wedge first, MCV second, coastal erosion last.</h2>
     <p>Forecast discussions from Atlanta, Philadelphia, and New York all point to the same sequence.</p>
     <div class="timeline">
@@ -683,7 +1348,7 @@
     </div>
   </section>
 
-  <section class="slide" id="s3" data-kicker="Surface analysis" data-number="03/13">
+  <section class="slide" id="s3" data-kicker="Surface analysis" data-number="03/19">
     <h2>The surface map had the classic CAD fingerprint.</h2>
     <p>Look for the frontal clutter along the East Coast, high pressure to the north/east side, and a low/wave trying to lift the boundary north.</p>
     <div class="map-frame">
@@ -704,7 +1369,97 @@
     </div>
   </section>
 
-  <section class="slide" id="s4" data-kicker="Mechanism" data-number="04/13">
+  <section class="slide" id="s3a" data-kicker="Forensic check" data-number="04/19">
+    <h2>At briefing time, the surface obs proved the wedge had not cleared NYC.</h2>
+    <p>The radar was tempting, but the useful first question was simpler: where is the shallow cold air still anchored?</p>
+    <div class="diagnostic-grid">
+      <div class="station-map" role="img" aria-label="Schematic station plot contrasting wedged NYC observations with warm-sector Charlotte and Atlanta observations">
+        <div class="station-chip" style="left: 62%; top: 12%;">
+          <div class="icao">KJFK</div>
+          <div class="met">13/13 C, 030/06<br>OVC005, drizzle</div>
+        </div>
+        <div class="station-chip" style="left: 48%; top: 28%;">
+          <div class="icao">KCDW</div>
+          <div class="met">13/13 C, 110/05<br>OVC006</div>
+        </div>
+        <div class="station-chip" style="left: 28%; top: 42%;">
+          <div class="icao">KABE</div>
+          <div class="met">14/13 C, 110/08<br>OVC006</div>
+        </div>
+        <div class="station-chip warm" style="left: 12%; top: 68%;">
+          <div class="icao">KCLT</div>
+          <div class="met">23/21 C, TSRA<br>BKN021CB</div>
+        </div>
+        <div class="station-chip warm" style="left: 54%; top: 72%;">
+          <div class="icao">KATL</div>
+          <div class="met">23/21 C, 180/05<br>VFR, rain ended</div>
+        </div>
+      </div>
+      <div class="radar-checklist">
+        <div class="radar-step">
+          <div class="num">1</div>
+          <div>
+            <h3>Surface wedge</h3>
+            <p>Look for a packed cluster of low ceilings, cool temperatures, and E/NE flow. That is the cold dome, not just “bad vis.”</p>
+          </div>
+        </div>
+        <div class="radar-step">
+          <div class="num">2</div>
+          <div>
+            <h3>Elevated source</h3>
+            <p>Check 925/850 mb winds and theta-e. If that layer is warmer/moister and moving differently, the surface parcel is not the whole story.</p>
+          </div>
+        </div>
+        <div class="radar-step">
+          <div class="num">3</div>
+          <div>
+            <h3>Convective proof</h3>
+            <p>Reflectivity shows hydrometeors, not parcel rooting. Validate with lightning, CB/TS METAR language, echo tops, dual-pol, and AFD wording.</p>
+          </div>
+        </div>
+        <div class="radar-step">
+          <div class="num">4</div>
+          <div>
+            <h3>Route impact</h3>
+            <p>Only then decide whether the problem is low IFR, embedded convection, terrain-trapped escape routes, or all three.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s3b" data-kicker="Layer proof" data-number="05/19">
+    <h2>The most important clue is vertical: NYC was capped at the ground, not dry aloft.</h2>
+    <p>At OKX, the 00Z sounding had cool easterly flow at the surface, then a much warmer/moister southwest layer by 925 mb. That is the conveyor belt riding over the wedge.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <span class="tag">OKX surface</span>
+        <div class="value">13.8/13.5 C</div>
+        <p>1021 mb / 20 m, wind 095/03, theta-e 312 K. Saturated, cool, and stable at the ground.</p>
+      </div>
+      <div class="proof-card">
+        <span class="tag">OKX 925 mb</span>
+        <div class="value">16.4/16.4 C</div>
+        <p>856 m, wind 210/15, theta-e 333 K. A warm/moist layer sits above the marine surface layer.</p>
+      </div>
+      <div class="proof-card">
+        <span class="tag">Diagnosis</span>
+        <div class="value">+21 K theta-e</div>
+        <p>That jump from surface to 925 mb is the lid and the elevated source layer in one number.</p>
+      </div>
+    </div>
+    <div class="layer-table" aria-label="Selected 00Z sounding levels">
+      <div class="head">Site / layer</div><div class="head">Height</div><div class="head">Temp/dewpoint</div><div class="head">Wind</div><div class="head">Theta-e</div>
+      <div>OKX surface</div><div>20 m</div><div>13.8 / 13.5 C</div><div>095/03 kt</div><div>312 K</div>
+      <div>OKX 925 mb</div><div>856 m</div><div>16.4 / 16.4 C</div><div>210/15 kt</div><div>333 K</div>
+      <div>OKX 850 mb</div><div>1,572 m</div><div>12.2 / 11.4 C</div><div>220/19 kt</div><div>329 K</div>
+      <div>IAD 850 mb</div><div>1,556 m</div><div>14.6 / 12.1 C</div><div>220/24 kt</div><div>333 K</div>
+      <div>FFC 925 mb</div><div>822 m</div><div>21.2 / 17.6 C</div><div>215/19 kt</div><div>342 K</div>
+    </div>
+    <div class="big-claim">Teaching point: NYC surface parcels had almost no useful buoyancy and were trapped under the inversion. That does not eliminate forced/elevated rain or thunder from the warm/moist layer above the wedge.</div>
+  </section>
+
+  <section class="slide" id="s4" data-kicker="Mechanism" data-number="06/19">
     <h2>Cross-section: the cold dome is shallow, but it changes everything.</h2>
     <p>The surface parcel in NYC is trapped under an inversion. The active parcels are either lifted above the wedge, or rooted where the wedge has eroded inland/southwest.</p>
     <div class="mechanism">
@@ -747,9 +1502,75 @@
     </div>
   </section>
 
-  <section class="slide" id="s5" data-kicker="Soundings" data-number="05/13">
+  <section class="slide" id="s4b" data-kicker="Lift diagnosis" data-number="07/19">
+    <h2>The lift came from overlap, not one magic trigger.</h2>
+    <p>Three layers mattered at once: a surface cold dome, a 925/850 mb warm-moist conveyor, and mid-level ascent from the Gulf MCV plus the approaching wave/fronts.</p>
+    <div class="lift-diagnosis">
+      <div class="lift-map">
+        <svg viewBox="0 0 900 540" role="img" aria-label="Schematic lift diagnosis map showing CAD wedge, warm moist conveyor, MCV track, and overlap zone">
+          <defs>
+            <marker id="arrowLiftWarm" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,4 L0,8 Z" fill="#c65d32"></path>
+            </marker>
+            <marker id="arrowLiftBlue" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,4 L0,8 Z" fill="#2f7ea4"></path>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="900" height="540" fill="rgba(255,252,239,0.32)"></rect>
+          <path d="M220 520 C285 420, 310 325, 352 246 C396 162, 416 92, 462 16" fill="none" stroke="#171914" stroke-width="10" opacity="0.22"></path>
+          <text x="244" y="292" transform="rotate(-66 244 292)" font-family="IBM Plex Mono" font-size="17" fill="#171914">APPALACHIANS</text>
+          <path d="M420 20 C540 72, 660 130, 842 138 L900 540 L384 540 C426 404, 436 248, 420 20 Z" fill="#2f7ea4" opacity="0.28"></path>
+          <path d="M438 44 C552 88, 664 138, 842 150" fill="none" stroke="#2f7ea4" stroke-width="5" marker-end="url(#arrowLiftBlue)"></path>
+          <text x="572" y="108" font-family="Newsreader" font-size="34" fill="#174f6a">cold wedge</text>
+          <text x="604" y="138" font-family="IBM Plex Mono" font-size="14" fill="#174f6a">E/NE surface flow, low ceilings</text>
+          <path d="M92 458 C202 386, 334 302, 490 236 C616 184, 742 166, 870 174" fill="none" stroke="#c65d32" stroke-width="7" marker-end="url(#arrowLiftWarm)"></path>
+          <path d="M62 400 C202 326, 354 248, 528 206 C652 176, 760 178, 856 198" fill="none" stroke="#c65d32" stroke-width="4" opacity="0.65" marker-end="url(#arrowLiftWarm)"></path>
+          <text x="190" y="366" font-family="Newsreader" font-size="31" fill="#8a3d20">925/850 mb SW conveyor</text>
+          <text x="206" y="394" font-family="IBM Plex Mono" font-size="14" fill="#8a3d20">theta-e advection + isentropic upglide</text>
+          <text x="206" y="416" font-family="IBM Plex Mono" font-size="13" fill="#8a3d20">OKX sfc 312K -> OKX 925 333K -> FFC 925 342K</text>
+          <ellipse cx="420" cy="258" rx="172" ry="78" fill="#a68d25" opacity="0.2" stroke="#a68d25" stroke-width="3"></ellipse>
+          <text x="310" y="254" font-family="Newsreader" font-size="30" fill="#6b5b18">overlap zone</text>
+          <text x="276" y="282" font-family="IBM Plex Mono" font-size="14" fill="#6b5b18">lift + moisture + usable instability</text>
+          <path d="M168 450 C230 386, 278 326, 328 274 C376 224, 422 190, 486 158" fill="none" stroke="#a68d25" stroke-width="5" stroke-dasharray="12 9"></path>
+          <circle cx="168" cy="450" r="28" fill="none" stroke="#a68d25" stroke-width="5"></circle>
+          <circle cx="328" cy="274" r="28" fill="none" stroke="#a68d25" stroke-width="5"></circle>
+          <circle cx="486" cy="158" r="28" fill="none" stroke="#a68d25" stroke-width="5"></circle>
+          <text x="70" y="488" font-family="IBM Plex Mono" font-size="13" fill="#6b5b18">NW GA</text>
+          <text x="284" y="320" font-family="IBM Plex Mono" font-size="13" fill="#6b5b18">S APP</text>
+          <text x="492" y="132" font-family="IBM Plex Mono" font-size="13" fill="#6b5b18">INLAND PA</text>
+          <text x="36" y="44" font-family="IBM Plex Mono" font-size="15" fill="#171914">SPC 01Z: remnant lower/mid-level MCV moving NNE into the southern Appalachians</text>
+          <text x="682" y="312" font-family="Newsreader" font-size="30" fill="#171914">NYC</text>
+          <text x="642" y="340" font-family="IBM Plex Mono" font-size="14" fill="#171914">surface stable; elevated/forced precip possible</text>
+        </svg>
+      </div>
+      <div class="lift-card-stack">
+        <div class="lift-card">
+          <div class="tag">Surface layer</div>
+          <h3>CAD supplies the lid.</h3>
+          <p>Cool E/NE flow and low ceilings identify the shallow cold dome. Surface parcels near NYC were not the storm fuel.</p>
+        </div>
+        <div class="lift-card">
+          <div class="tag">925/850 mb</div>
+          <h3>Warm/moist flow supplies upglide.</h3>
+          <p>Southwesterly flow overruns the dome. The theta-e axis rises from OKX surface 312 K to OKX 925 mb 333 K and FFC 925 mb 342 K.</p>
+        </div>
+        <div class="lift-card">
+          <div class="tag">Mid levels</div>
+          <h3>The MCV/shortwave focuses ascent.</h3>
+          <p>SPC 0100Z placed the remnant lower/mid-level MCV moving NNE from northwest Georgia into the southern Appalachians; FFC also diagnosed the MCV.</p>
+        </div>
+        <div class="lift-card">
+          <div class="tag">Forecast lesson</div>
+          <h3>Find the overlap.</h3>
+          <p>Thunder becomes more credible where forcing, moisture, and usable instability overlap. NYC had forcing/moisture, but poor surface rooting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s5" data-kicker="Soundings" data-number="08/19">
     <h2>The 00Z soundings separate the two air masses.</h2>
-    <p>OKX had a cool surface layer with a low-level inversion and no surface-based CAPE. FFC/RNK were warmer, moister, and much closer to convective.</p>
+    <p>OKX had a cool surface layer with a low-level inversion and almost no surface-based CAPE. The useful instability was weak, elevated, and tied to the 925 mb source layer.</p>
     <div class="grid-2">
       <div class="card chart-card">
         <h3>Temperature profiles, 00Z 25 May</h3>
@@ -764,8 +1585,8 @@
           </div>
           <div class="metric">
             <div class="label">OKX CAPE</div>
-            <div class="number">0</div>
-            <div class="small">surface based</div>
+            <div class="number">≈2</div>
+            <div class="small">J/kg, surface</div>
           </div>
           <div class="metric">
             <div class="label">OKX PWAT</div>
@@ -777,34 +1598,52 @@
             <div class="number">649</div>
             <div class="small">J/kg</div>
           </div>
+          <div class="metric">
+            <div class="label">OKX MUCAPE proxy</div>
+            <div class="number">189</div>
+            <div class="small">J/kg, 925 mb parcel</div>
+          </div>
         </div>
-        <div class="card keyline">
-          <h3>Interpretation</h3>
-          <ul>
-            <li><strong>NYC:</strong> stable marine/CAD layer at the ground. Showers can be forced/elevated, but robust surface-based storms are disfavored.</li>
-            <li><strong>Georgia/Appalachians:</strong> warmer/moister profiles, an MCV, and lower inhibition. That is where convective organization makes sense.</li>
-            <li><strong>The trap:</strong> high PWAT can make weak convection look impactful on radar and in the cockpit, even when severe potential is low.</li>
-          </ul>
+        <div class="parcel-table" aria-label="OKX parcel diagnostics">
+          <div class="head">Parcel</div><div class="head">CAPE</div><div class="head">CIN</div><div class="head">LFC / EL</div><div class="head">Operational read</div>
+          <div>Surface</div><div>≈2 J/kg</div><div>0</div><div>none useful</div><div>Stable wedge; not a surface storm source.</div>
+          <div>925 mb</div><div>189 J/kg</div><div>0</div><div>925 / 540 mb</div><div>Weak elevated thunder/efficient rain possible if forced.</div>
+          <div>850 mb</div><div>4 J/kg</div><div>-37</div><div>640 / 621 mb</div><div>Less useful; the better NYC source was lower, near 925 mb.</div>
+        </div>
+        <p class="small">Parcel diagnostics are MetPy calculations from the archived OKX 00Z sounding. The 925 mb parcel is a local MUCAPE proxy; a live briefing should still check plan-view model MUCAPE/elevated CAPE fields.</p>
+        <div class="parcel-inset" aria-label="OKX parcel-source schematic">
+          <h4>OKX parcel-source sketch</h4>
+          <svg viewBox="0 0 620 150" role="img" aria-label="Surface wedge capped below a weak 925 mb elevated source layer">
+            <rect x="18" y="100" width="584" height="36" fill="rgba(47,126,164,0.2)" stroke="#171914" stroke-width="1.5"></rect>
+            <rect x="18" y="54" width="584" height="34" fill="rgba(198,93,50,0.16)" stroke="#171914" stroke-width="1.5"></rect>
+            <rect x="18" y="22" width="584" height="20" fill="rgba(166,141,37,0.12)" stroke="#171914" stroke-width="1.2"></rect>
+            <path d="M92 118 C190 88, 280 80, 388 64 S548 46, 586 28" fill="none" stroke="#c65d32" stroke-width="5" stroke-linecap="round"></path>
+            <path d="M586 28 l-22 -2 l13 18 z" fill="#c65d32"></path>
+            <line x1="18" y1="88" x2="602" y2="88" stroke="#171914" stroke-width="2" stroke-dasharray="7 7"></line>
+            <text x="30" y="122" font-size="13" font-weight="700">surface CAD wedge: OVC005, 13/13 C, ~2 J/kg CAPE</text>
+            <text x="30" y="76" font-size="13" font-weight="700">925 mb source: LFC near 925 mb, 189 J/kg proxy</text>
+            <text x="30" y="37" font-size="12">850 mb parcel: only ~4 J/kg after lifting from too high</text>
+            <text x="376" y="61" font-size="12" fill="#c65d32">warm/moist upglide above cold dome</text>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="slide" id="s6" data-kicker="METAR evidence" data-number="06/13">
+  <section class="slide" id="s6" data-kicker="METAR evidence" data-number="09/19">
     <h2>The wedge showed up as hours of low ceilings, not just a model idea.</h2>
-    <p>Recent METARs captured the shallow cold dome: cool temperatures, easterly/northeasterly surface winds, drizzle/fog, and IFR ceilings across NYC/northern NJ/eastern PA.</p>
+    <p>This view samples each station hourly, so it teaches duration instead of rewarding stations that issued more SPECI reports.</p>
     <div class="grid-2">
       <div class="card">
-        <h3>Low-ceiling persistence in the 48-hour METAR pull</h3>
-        <div class="bar-list">
-          <div class="bar-row"><strong>KCDW</strong><div class="bar"><span style="width:76%"></span></div><span>54 obs</span></div>
-          <div class="bar-row"><strong>KCLT</strong><div class="bar"><span style="width:35%"></span></div><span>25 obs</span></div>
-          <div class="bar-row"><strong>KATL</strong><div class="bar"><span style="width:35%"></span></div><span>25 obs</span></div>
-          <div class="bar-row"><strong>KJFK</strong><div class="bar"><span style="width:32%"></span></div><span>23 obs</span></div>
-          <div class="bar-row"><strong>KABE</strong><div class="bar"><span style="width:30%"></span></div><span>21 obs</span></div>
-          <div class="bar-row"><strong>KIPT</strong><div class="bar"><span style="width:4%"></span></div><span>3 obs</span></div>
+        <h3>Hourly flight category, 23 May 19Z -> 25 May 02Z</h3>
+        <div id="ceilingTimeline" class="ceiling-timeline" aria-label="Hourly METAR flight category timeline"></div>
+        <div class="legend">
+          <span class="cat v"></span>VFR
+          <span class="cat m"></span>MVFR
+          <span class="cat i"></span>IFR
+          <span class="cat l"></span>LIFR
         </div>
-        <p class="small">Count of reports with ceiling at or below 1,000 ft from AviationWeather 48-hour METAR API. Counts are not normalized by station reporting frequency.</p>
+        <p class="small">Each cell is the nearest observation within 45 minutes of the hour. This avoids the raw-count bias from stations issuing frequent special observations.</p>
       </div>
       <div class="card">
         <h3>Near 02Z 25 May: the coastal side was still wedged</h3>
@@ -813,29 +1652,39 @@
           <li><strong>KLGA:</strong> 13/12 deg C, BKN004/OVC009, drizzle and mist.</li>
           <li><strong>KTEB:</strong> 13/12 deg C, 2 SM light rain/mist, OVC005.</li>
           <li><strong>KCDW:</strong> 13/13 deg C, OVC006, east-southeast wind.</li>
+          <li><strong>KFRG:</strong> 13/13 deg C, 040/05, 2 SM BR, OVC003 at 0153Z; LIFR and fully in the coastal wedge.</li>
           <li><strong>KCLT:</strong> 22/21 deg C with TSRA and CB - much closer to the active convective air mass.</li>
         </ul>
+        <p><strong>Read the contrast:</strong> NYC/northern NJ settles into IFR/LIFR late in the period, while CLT/ATL show actual TS/CB language. That is stronger evidence of convection than reflectivity alone.</p>
       </div>
     </div>
   </section>
 
-  <section class="slide" id="s7" data-kicker="Radar check" data-number="07/13">
+  <section class="slide" id="s7" data-kicker="Radar check" data-number="10/19">
     <h2>The radar loop shows the shield riding the western edge of the wedge.</h2>
-    <p>The strongest echoes repeatedly favor the Appalachians and inland Pennsylvania. NYC stays on the cool, marine side with weaker returns.</p>
+    <p>The strongest echoes repeatedly favor the Appalachian corridor into inland Pennsylvania. NYC stays on the cool, marine side with weaker returns.</p>
     <div class="weather-image radar-loop-card">
       <div id="radarLoopMap" role="img" aria-label="Animated NOAA MRMS radar reflectivity from 01:10Z to 03:02Z over an OpenStreetMap basemap"></div>
       <div class="radar-panel">
         <button type="button" id="radarToggle" aria-label="Pause radar loop">pause</button>
         <div class="radar-time" id="radarTime">2026-05-25 01:10Z</div>
         <div class="radar-track" aria-hidden="true"><span id="radarTrackFill"></span></div>
-        <div class="radar-note">NOAA/NWS MRMS base reflectivity frames, frozen from 01:10-03:02Z. Basemap: OpenStreetMap.</div>
+        <div class="radar-note">NOAA/NWS MRMS base reflectivity frames, frozen from 01:10-03:02Z. This is a focused example window, not the whole event; reflectivity alone does not prove lightning.</div>
       </div>
+    </div>
+    <p class="small proxy-warning"><strong>Proxy-evidence note:</strong> this static deck validates convection using MRMS reflectivity plus available METAR TS/CB/lightning wording. In a live briefing, confirm with GLM/NLDN/ENTLN lightning and MRMS echo-top products before treating a route return as embedded thunder.</p>
+    <div class="validation-row">
+      <div><strong>Reflectivity:</strong> strongest echoes west/inland; NYC weaker in this window.</div>
+      <div><strong>Lightning/TS:</strong> KCLT had -TSRA and OCNL LTGICCG; ATL had CB/lightning earlier.</div>
+      <div><strong>Echo tops proxy:</strong> KCLT reported BKN021CB with OVC250; NYC reported no TS/CB.</div>
+      <div><strong>NYC/KFRG obs:</strong> BR/DZ/RA, OVC002-006, no TS language.</div>
+      <div><strong>Rooting:</strong> OKX surface CAPE ~2; 925 mb parcel proxy 189 J/kg.</div>
     </div>
   </section>
 
-  <section class="slide" id="s8" data-kicker="Lift sources" data-number="08/13">
-    <h2>Where did the lift come from?</h2>
-    <p>Not one magic trigger. It was stacked, with each layer helping a different part of the storm shield.</p>
+  <section class="slide" id="s8" data-kicker="Lift sources" data-number="11/19">
+    <h2>The lift was stacked. The MCV was an enhancer, not the whole explanation.</h2>
+    <p>The better geography is not simply “west of the Appalachians.” It is the Piedmont/Appalachian corridor into inland Pennsylvania, where forcing and usable instability lined up better.</p>
     <div class="grid-3">
       <div class="card">
         <h3>1. Isentropic upglide</h3>
@@ -843,7 +1692,7 @@
       </div>
       <div class="card">
         <h3>2. MCV ascent</h3>
-        <p>The remnant Gulf vortex supplied mid-level spin and mesoscale lift. It helped organize convection across GA/Carolinas/Appalachians.</p>
+        <p>The remnant Gulf vortex supplied mid-level spin and mesoscale lift. The FFC AFD diagnosed this feature; this deck treats it as an organizer, not a standalone thunderstorm cause.</p>
       </div>
       <div class="card">
         <h3>3. Front/shortwave forcing</h3>
@@ -852,27 +1701,27 @@
     </div>
     <div class="card keyline">
       <h3>The important distinction</h3>
-      <p><strong>Lift exists over NYC, but instability does not line up as well at the surface.</strong> West of the Appalachians and near the Piedmont, lift and usable instability overlap better, so the convection is more obvious there first.</p>
+      <p><strong>Lift exists over NYC, but instability does not line up as well at the surface.</strong> In the Appalachian/Piedmont/inland-PA corridor, lift and usable instability overlap better, so the convection is more obvious there first.</p>
     </div>
   </section>
 
-  <section class="slide" id="s9" data-kicker="NYC interpretation" data-number="09/13">
+  <section class="slide" id="s9" data-kicker="NYC interpretation" data-number="12/19">
     <h2>So why can NYC get thunder at all?</h2>
     <p>Because thunder does not require the surface parcel to be the storm parcel.</p>
     <div class="grid-2">
       <div class="card">
-        <h3>What blocks surface storms</h3>
+        <h3>What blocks surface-rooted storms</h3>
         <ul>
           <li>Cold, saturated surface layer.</li>
           <li>Low-level inversion/warm nose above the surface.</li>
           <li>Marine easterly flow keeps the boundary layer cool.</li>
-          <li>Surface-based CAPE at OKX: effectively zero at 00Z.</li>
+          <li>Surface-based CAPE at OKX: about 2 J/kg at 00Z.</li>
         </ul>
       </div>
       <div class="card">
         <h3>What can still produce thunder</h3>
         <ul>
-          <li>Lifted parcels above the cold dome, roughly 925-800 mb.</li>
+          <li>Lifted parcels above the cold dome, roughly 925-850 mb.</li>
           <li>Convective rain bands advecting in from inland.</li>
           <li>Shortwave/frontal ascent deepening the saturated layer.</li>
           <li>Very high moisture makes even weak cells efficient.</li>
@@ -882,7 +1731,107 @@
     <div class="big-claim">Best short version: NYC is not the storm engine. NYC is under the cold lid, waiting for the conveyor belt to throw rain and maybe elevated thunder over the top.</div>
   </section>
 
-  <section class="slide" id="s10" data-kicker="Takeaways" data-number="10/13">
+  <section class="slide" id="s9b" data-kicker="Pilot read" data-number="13/19">
+    <h2>Operational read: treat a westbound NYC launch as a trap pattern.</h2>
+    <p>For a KCDW/KFRG departure toward Pennsylvania or the Appalachians, the surface route and the convective source layer disagree.</p>
+    <div class="decision-grid">
+      <div class="decision-card scenario-card">
+        <div class="tag">1. METAR/TAF trend</div>
+        <h3>Low ceiling is the first gate.</h3>
+        <p>If KCDW/KFRG and nearby returns are IFR/LIFR, launch only if alternates and an escape direction are already clean.</p>
+      </div>
+      <div class="decision-card scenario-card">
+        <div class="tag">2. Route / terrain</div>
+        <h3>Terrain raises the price.</h3>
+        <p>Across eastern PA, MEAs and terrain compress options while the wedge creates low ceilings below. A benign-looking rain shield can still remove outs.</p>
+      </div>
+      <div class="decision-card scenario-card">
+        <div class="tag">3. Tops / icing</div>
+        <h3>Do not stop at ceilings.</h3>
+        <p>00Z freezing levels were high: OKX ~12.7k ft, IAD/RNK ~13.9k ft. Below that, ceilings/rain dominate; above that, tops and embedded cells matter.</p>
+      </div>
+      <div class="decision-card scenario-card">
+        <div class="tag">4. TS evidence</div>
+        <h3>Heavy bands need proof.</h3>
+        <p>Require lightning, CB/TS reports, echo tops, or AFD/CWA wording before treating returns as convective.</p>
+      </div>
+      <div class="decision-card scenario-card">
+        <div class="tag">5. Alternates / escape</div>
+        <h3>Pre-commit the exits.</h3>
+        <p>No-go if alternates west are also IFR/LIFR, embedded TS/CB is on the route, or the only escape is back into coastal LIFR.</p>
+      </div>
+    </div>
+    <div class="big-claim">Go/no-go lesson: in CAD, the safe question is not “are there storms at NYC?” It is “can I keep a clean escape path while the warm/moist conveyor throws efficient rain or elevated thunder over low ceilings?”</div>
+  </section>
+
+  <section class="slide" id="s9c" data-kicker="Briefing workflow" data-number="14/19">
+    <h2>Turn the pattern into a fly/no-fly scan.</h2>
+    <p>The cockpit workflow is to separate the surface wedge problem from the elevated-convection problem, then require a clean escape path before accepting either one.</p>
+    <div class="briefing-grid">
+      <div class="brief-card">
+        <div class="tag">1 / Surface</div>
+        <h3>Trend the wedge.</h3>
+        <p>Sample KCDW/KFRG/KTEB/KABE hourly, not by raw SPECI count. Cold dewpoint spreads and NE/E winds mean the wedge is still in control.</p>
+      </div>
+      <div class="brief-card">
+        <div class="tag">2 / Forecast</div>
+        <h3>Make TAFs prove improvement.</h3>
+        <p>Do not launch on “warm front should lift” alone. Require timing that improves both departure and route alternates.</p>
+      </div>
+      <div class="brief-card">
+        <div class="tag">3 / Route</div>
+        <h3>Price terrain and MEAs.</h3>
+        <p>A westbound route quickly trades coastal LIFR for rising terrain and stronger inland returns. MEAs reduce room to dodge below.</p>
+      </div>
+      <div class="brief-card">
+        <div class="tag">4 / Vertical</div>
+        <h3>Check tops/freezing.</h3>
+        <p>In this case freezing levels were high, so icing was not the first problem. Embedded cells and cloud tops still mattered.</p>
+      </div>
+      <div class="brief-card">
+        <div class="tag">5 / Thunder</div>
+        <h3>Require convective proof.</h3>
+        <p>Look for lightning, TS/CB reports, echo tops, CWA/SIGMET wording, and AFD reasoning. Reflectivity alone is not enough.</p>
+      </div>
+      <div class="brief-card">
+        <div class="tag">6 / Escape</div>
+        <h3>Pre-commit outs.</h3>
+        <p>No-go if west alternates are IFR/LIFR, returns are convective, or the only retreat is back into the coastal wedge.</p>
+      </div>
+    </div>
+    <div class="uncertainty-row" aria-label="Decision uncertainty switches">
+      <div class="label">What changes the decision?</div>
+      <div>Warm front actually north of the route</div>
+      <div>KCDW/KFRG ceilings lifting on obs, not hope</div>
+      <div>Western alternates MVFR/VFR with fuel margin</div>
+      <div>No lightning/CB/echo-top signal on route</div>
+      <div>Clear return or coastal escape corridor</div>
+    </div>
+  </section>
+
+  <section class="slide" id="s9d" data-kicker="Worked decision" data-number="15/19">
+    <h2>Worked example: KCDW/KFRG westbound at 03-04Z.</h2>
+    <p>This is not a route recommendation. It shows how the evidence gates would have read during the case window.</p>
+    <div class="worked-grid">
+      <div>
+        <div class="route-table" aria-label="Worked go/no-go evidence table">
+          <div class="head">Gate</div><div class="head">Departure</div><div class="head">Route / terrain</div><div class="head">Convective proof</div>
+          <div>Observed now</div><div>KCDW OVC006; KFRG VV002/OVC003 LIFR; wedge still saturated.</div><div>KABE OVC006, KIPT OVC008-009; no obvious westbound VMC escape.</div><div>NYC/KFRG no TS/CB wording; strongest returns west/inland.</div>
+          <div>Forecast gate</div><div>KTEB/JFK/ISP TAFs kept 1/2-2 SM DZ/FG/SHRA and OVC003-006 through morning.</div><div>KABE TAF: OVC002 at 06Z, OVC004 at 14Z, BKN015 only by 18Z. KIPT: OVC007 at 12Z, OVC015 by 16Z.</div><div>NYC-area TAFs carried PROB30 TSRA/CB around 12-16Z, so the later improvement window also had embedded-convection risk.</div>
+          <div>Minimum-altitude problem</div><div>Departure ceiling is below normal pattern altitude and below any visual fallback.</div><div>North/eastern PA terrain and MEAs force an IFR plan; low tops are not proven, and below-cloud escape is unavailable.</div><div>Heavy returns cannot be waved through without lightning/echo-top/CB confirmation.</div>
+          <div>Decision</div><div>Stand down for a recreational/training flight.</div><div>Reassess after observed ceilings improve, western alternates open, and route returns lose convective evidence.</div><div>Use radar as a trigger to ask better questions, not as a clearance to go.</div>
+        </div>
+      </div>
+      <div class="decision-stamp">
+        <div class="verdict">NO-GO now.</div>
+        <p><strong>Why:</strong> the departure side was LIFR/IFR, the westbound escape/alternate chain was still low, and the next forecast improvement window overlapped with possible embedded TS/CB.</p>
+        <p><strong>What would flip it:</strong> KCDW/KFRG ceilings actually lifting, KABE/KIPT or nearer alternates becoming usable, no lightning/CB/echo-top signal on route, and a clean retreat corridor.</p>
+        <p class="small">TAF sources: KTEB/KJFK/KISP 0245Z, KABE 0131Z, KIPT 0212Z May 25. Observations: AviationWeather METAR API, 01-04Z.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="s10" data-kicker="Takeaways" data-number="16/19">
     <h2>Pilot-weather lessons from this case.</h2>
     <div class="grid-3">
       <div class="card">
@@ -904,14 +1853,17 @@
         <li>NWS Atlanta/FFC AFDs, issued 24-25 May 2026: CAD wedge, MCV, HiRes/CAM guidance, tall-skinny CAPE discussion.</li>
         <li>NWS New York/OKX AFD, issued 24 May 2026 2357Z: warm front, cold front, shortwave, convective morning showers, PWAT 1.75-2.00 inches.</li>
         <li>NWS Philadelphia/PHI AFD, issued 25 May 2026 0147Z: strong CAD wedge, warm-frontal progression, shortwave/cold-front timing.</li>
+        <li>SPC Day 1 0100Z update: remnant lower/mid-tropospheric MCV moving into the southern Appalachians, with storms spreading into cooler/stable air.</li>
         <li>University of Wyoming sounding archive: OKX, FFC, IAD, RNK 00Z 25 May 2026 soundings.</li>
-        <li>AviationWeather METAR API: KJFK, KLGA, KTEB, KCDW, KABE, KIPT, KATL, KCLT 48-hour observations.</li>
-        <li>WPC surface analysis archive, NOAA/NWS MRMS base reflectivity image service, and OpenStreetMap basemap tiles, 24-25 May 2026.</li>
+        <li>MetPy parcel calculations from the archived OKX sounding for surface, 925 mb, and 850 mb parcel comparisons.</li>
+        <li>AviationWeather METAR API: KJFK, KLGA, KTEB, KCDW, KFRG, KABE, KIPT, KATL, KCLT 48-hour observations, sampled hourly for category timelines.</li>
+        <li>AviationWeather TAF API: KTEB/KJFK/KISP 0245Z, KABE 0131Z, and KIPT 0212Z May 25 products for the worked go/no-go example.</li>
+        <li>WPC surface analysis archive, NOAA/NWS MRMS base reflectivity image service, OpenStreetMap basemap tiles, and proxy TS/CB validation from METAR text, 24-25 May 2026.</li>
       </ul>
     </div>
   </section>
 
-  <section class="slide" id="s11" data-kicker="Source screenshots" data-number="11/13">
+  <section class="slide" id="s11" data-kicker="Source screenshots" data-number="17/19">
     <h2>AFD source captures: CAD wedge plus MCV.</h2>
     <p>These are browser screenshots from the NWS product pages, trimmed to the relevant paragraphs and highlighted for the terms that matter.</p>
     <div class="source-shot-grid">
@@ -926,7 +1878,7 @@
     </div>
   </section>
 
-  <section class="slide" id="s12" data-kicker="Source screenshots" data-number="12/13">
+  <section class="slide" id="s12" data-kicker="Source screenshots" data-number="18/19">
     <h2>AFD source capture: NYC gets forced rain, not surface-rooted storms.</h2>
     <p>OKX framed Monday morning as a warm-front/cold-front/shortwave event with very high precipitable water.</p>
     <div class="source-shot-grid single">
@@ -945,7 +1897,7 @@
     </div>
   </section>
 
-  <section class="slide" id="s13" data-kicker="Source screenshots" data-number="13/13">
+  <section class="slide" id="s13" data-kicker="Source screenshots" data-number="19/19">
     <h2>AviationWeather screenshots: the surface reports tell the story.</h2>
     <p>The raw METAR pages show the contrast: NYC stuck in cool IFR/drizzle while Charlotte/Atlanta had warmer, more convective observations nearby.</p>
     <div class="source-shot-grid">
@@ -954,7 +1906,7 @@
         <figcaption>AviationWeather METARs, NYC metro: OVC005/006, drizzle, rain, mist, cool 13/13 deg C profiles.</figcaption>
       </figure>
       <figure class="source-shot">
-        <img src="assets/screenshots/awc-metar-south-appalachians.png" alt="AviationWeather METAR screenshot for CLT ATL IPI ABE showing thunderstorm and convective observations">
+        <img src="assets/screenshots/awc-metar-south-appalachians.png" alt="AviationWeather METAR screenshot for CLT ATL KIPT KABE showing thunderstorm and convective observations">
         <figcaption>AviationWeather METARs, inland/south: CLT TSRA/CB and ATL convective cloud/rain history near the active MCV corridor.</figcaption>
       </figure>
     </div>
@@ -994,6 +1946,50 @@
     { time: "2026-05-25 02:48Z", file: "assets/radar-loop/radar_20260525_0248Z.png" },
     { time: "2026-05-25 03:02Z", file: "assets/radar-loop/radar_20260525_0302Z.png" }
   ];
+
+  const ceilingTimeline = [
+    { station: "KJFK", strip: "VVVMMMMVIIMMMMMIIIIIIIIIIIIMIIII", note: "coastal IFR locks in late" },
+    { station: "KLGA", strip: "VMVMMMVVVMMMMMMMIIIIIIIIIIIIIIIL", note: "ends LIFR" },
+    { station: "KTEB", strip: "VVMMMIMIMMMMMMMMIIIIIIIIIIIIIIII", note: "persistent NJ wedge" },
+    { station: "KCDW", strip: "VVMIIMMIIIIIIMIIIIIIIIMMMMMIIIII", note: "long IFR run" },
+    { station: "KFRG", strip: "MVMMMMVVVMMMMIIIIIIIIIIIIIIMIILL", note: "LI departure trap" },
+    { station: "KABE", strip: "VVVMMMMMMMMMMMMMMIMIIIIIMIMIIIII", note: "inland wedge edge" },
+    { station: "KIPT", strip: "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM", note: "mostly MVFR" },
+    { station: "KATL", strip: "VVVVVVVVMIIMIIIIILLLIIMVMVVMVVVV", note: "warm sector recovers" },
+    { station: "KCLT", strip: "LLLLLLLLLLLLLLLLLLLLLIMMMMMVMVMM", note: "low stratus, then TS/CB" }
+  ];
+
+  function initCeilingTimeline() {
+    const root = document.getElementById("ceilingTimeline");
+    if (!root) return;
+    const classFor = { V: "v", M: "m", I: "i", L: "l" };
+    root.innerHTML = "";
+    ceilingTimeline.forEach((row) => {
+      const el = document.createElement("div");
+      el.className = "ceiling-row";
+      const station = document.createElement("strong");
+      station.textContent = row.station;
+      const strip = document.createElement("div");
+      strip.className = "cat-strip";
+      [...row.strip].forEach((char) => {
+        const cell = document.createElement("span");
+        cell.className = `cat ${classFor[char] || "m"}`;
+        cell.title = `${row.station} ${char}`;
+        strip.appendChild(cell);
+      });
+      const note = document.createElement("div");
+      note.className = "small";
+      note.textContent = row.note;
+      el.append(station, strip, note);
+      root.appendChild(el);
+    });
+    const axis = document.createElement("div");
+    axis.className = "ceiling-axis";
+    axis.innerHTML = "<span>23 May 19Z</span><span>00Z</span><span>06Z</span><span>12Z</span><span>18Z</span><span>25 May 02Z</span>";
+    root.appendChild(axis);
+  }
+
+  initCeilingTimeline();
 
   function initRadarLoop() {
     const mapEl = document.getElementById("radarLoopMap");

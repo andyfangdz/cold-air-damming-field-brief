@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cold Air Damming Field Brief - May 23-25, 2026</title>
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
 
@@ -400,6 +401,102 @@
       height: 100%;
     }
 
+    .radar-loop-card {
+      position: relative;
+      height: 590px;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      background: #dfe9d7;
+    }
+
+    #radarLoopMap {
+      min-height: 0;
+      height: 100%;
+      background: #dfe9d7;
+    }
+
+    .radar-loop-card .leaflet-container {
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      background: #dfe9d7;
+    }
+
+    .radar-loop-card .leaflet-control-attribution {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      background: rgba(255, 252, 239, 0.86);
+      color: var(--muted);
+    }
+
+    .radar-loop-card .leaflet-image-layer {
+      transition: opacity 220ms linear;
+    }
+
+    .radar-loop-card .leaflet-tooltip {
+      border: 2px solid var(--ink);
+      border-radius: 4px;
+      box-shadow: 4px 4px 0 rgba(23, 25, 20, 0.16);
+      color: var(--ink);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 9px;
+      background: rgba(255, 252, 239, 0.9);
+    }
+
+    .radar-panel {
+      display: grid;
+      grid-template-columns: auto 210px minmax(150px, 1fr) 1.15fr;
+      gap: 14px;
+      align-items: center;
+      padding: 10px 12px;
+      border-top: 1px solid rgba(23, 25, 20, 0.3);
+      background: rgba(244, 240, 223, 0.94);
+    }
+
+    .radar-panel button {
+      height: 34px;
+      border: 2px solid var(--ink);
+      border-radius: 4px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 rgba(23, 25, 20, 0.16);
+    }
+
+    .radar-time {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .radar-track {
+      height: 9px;
+      border: 1px solid rgba(23, 25, 20, 0.58);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(47, 126, 164, 0.14);
+    }
+
+    .radar-track span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cold), var(--storm), var(--warm));
+      transition: width 220ms linear;
+    }
+
+    .radar-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.25;
+    }
+
     .callout {
       position: absolute;
       background: rgba(255, 252, 239, 0.9);
@@ -526,7 +623,15 @@
       .timeline > div:last-child { border-bottom: 0; }
       .mechanism,
       .chart-card,
-      .radar-box { height: 480px; }
+      .radar-box,
+      .radar-loop-card { height: 480px; }
+      .radar-panel {
+        grid-template-columns: auto 1fr;
+      }
+      .radar-track,
+      .radar-note {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
@@ -715,14 +820,16 @@
   </section>
 
   <section class="slide" id="s7" data-kicker="Radar check" data-number="07/13">
-    <h2>At 02:28Z, the convection was mostly inland and west.</h2>
-    <p>That matches your radar read: the forcing/instability overlap was not centered on NYC yet. NYC was downstream under the stable marine side.</p>
-    <div class="weather-image radar-box">
-      <img src="assets/radar_east_20260525_0228z.png" alt="NCEP radar reflectivity mosaic 2026-05-25 02:28Z">
-      <div class="callout nyc">NYC: little/no reflectivity sampled</div>
-      <div class="callout pa">Central/western PA: active returns</div>
-      <div class="callout app">Terrain/frontal zone: better lift overlap</div>
-      <div class="image-caption">NCEP CONUS base-reflectivity mosaic via WMS, 25 May 2026 02:28Z.</div>
+    <h2>The radar loop shows the shield riding the western edge of the wedge.</h2>
+    <p>The strongest echoes repeatedly favor the Appalachians and inland Pennsylvania. NYC stays on the cool, marine side with weaker returns.</p>
+    <div class="weather-image radar-loop-card">
+      <div id="radarLoopMap" role="img" aria-label="Animated NOAA MRMS radar reflectivity from 01:10Z to 03:02Z over an OpenStreetMap basemap"></div>
+      <div class="radar-panel">
+        <button type="button" id="radarToggle" aria-label="Pause radar loop">pause</button>
+        <div class="radar-time" id="radarTime">2026-05-25 01:10Z</div>
+        <div class="radar-track" aria-hidden="true"><span id="radarTrackFill"></span></div>
+        <div class="radar-note">NOAA/NWS MRMS base reflectivity frames, frozen from 01:10-03:02Z. Basemap: OpenStreetMap.</div>
+      </div>
     </div>
   </section>
 
@@ -799,7 +906,7 @@
         <li>NWS Philadelphia/PHI AFD, issued 25 May 2026 0147Z: strong CAD wedge, warm-frontal progression, shortwave/cold-front timing.</li>
         <li>University of Wyoming sounding archive: OKX, FFC, IAD, RNK 00Z 25 May 2026 soundings.</li>
         <li>AviationWeather METAR API: KJFK, KLGA, KTEB, KCDW, KABE, KIPT, KATL, KCLT 48-hour observations.</li>
-        <li>WPC surface analysis archive and NCEP CONUS radar WMS, 24-25 May 2026.</li>
+        <li>WPC surface analysis archive, NOAA/NWS MRMS base reflectivity image service, and OpenStreetMap basemap tiles, 24-25 May 2026.</li>
       </ul>
     </div>
   </section>
@@ -859,6 +966,7 @@
   <button type="button" id="next" aria-label="Next slide">dn</button>
 </div>
 
+<script src="assets/vendor/leaflet/leaflet.js"></script>
 <script>
   const deck = document.getElementById("deck");
   const slides = Array.from(document.querySelectorAll(".slide"));
@@ -874,6 +982,91 @@
     if (["ArrowDown", "PageDown", " "].includes(event.key)) { event.preventDefault(); go(1); }
     if (["ArrowUp", "PageUp"].includes(event.key)) { event.preventDefault(); go(-1); }
   });
+
+  const radarFrames = [
+    { time: "2026-05-25 01:10Z", file: "assets/radar-loop/radar_20260525_0110Z.png" },
+    { time: "2026-05-25 01:24Z", file: "assets/radar-loop/radar_20260525_0124Z.png" },
+    { time: "2026-05-25 01:38Z", file: "assets/radar-loop/radar_20260525_0138Z.png" },
+    { time: "2026-05-25 01:52Z", file: "assets/radar-loop/radar_20260525_0152Z.png" },
+    { time: "2026-05-25 02:06Z", file: "assets/radar-loop/radar_20260525_0206Z.png" },
+    { time: "2026-05-25 02:20Z", file: "assets/radar-loop/radar_20260525_0220Z.png" },
+    { time: "2026-05-25 02:34Z", file: "assets/radar-loop/radar_20260525_0234Z.png" },
+    { time: "2026-05-25 02:48Z", file: "assets/radar-loop/radar_20260525_0248Z.png" },
+    { time: "2026-05-25 03:02Z", file: "assets/radar-loop/radar_20260525_0302Z.png" }
+  ];
+
+  function initRadarLoop() {
+    const mapEl = document.getElementById("radarLoopMap");
+    if (!mapEl || !window.L || !radarFrames.length) return;
+
+    const bounds = [[35.5, -84.5], [43.5, -72.0]];
+    const map = L.map(mapEl, {
+      zoomControl: true,
+      attributionControl: true,
+      scrollWheelZoom: false,
+      keyboard: false,
+      maxBounds: [[34.4, -86.0], [44.5, -70.7]],
+      maxBoundsViscosity: 0.45
+    });
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 9,
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
+
+    map.fitBounds(bounds, { padding: [18, 18], animate: false });
+
+    const overlays = radarFrames.map((frame, i) =>
+      L.imageOverlay(frame.file, bounds, { opacity: i === 0 ? 0.82 : 0, interactive: false }).addTo(map)
+    );
+
+    const markerStyle = (color) => ({
+      radius: 7,
+      color,
+      weight: 3,
+      fillColor: "#fffcef",
+      fillOpacity: 0.96
+    });
+
+    [
+      { label: "NYC: cool wedge side", lat: 40.71, lon: -74.01, color: "#2f7ea4", direction: "left", offset: [-10, 0] },
+      { label: "Central PA: active returns", lat: 40.75, lon: -77.8, color: "#a68d25", direction: "top", offset: [0, -8] },
+      { label: "Appalachian lift zone", lat: 38.7, lon: -80.0, color: "#c65d32", direction: "top", offset: [0, -8] }
+    ].forEach((point) => {
+      L.circleMarker([point.lat, point.lon], markerStyle(point.color))
+        .addTo(map)
+        .bindTooltip(point.label, { permanent: true, direction: point.direction, offset: point.offset });
+    });
+
+    const timeEl = document.getElementById("radarTime");
+    const fillEl = document.getElementById("radarTrackFill");
+    const toggle = document.getElementById("radarToggle");
+    let frameIndex = 0;
+    let playing = true;
+
+    const showFrame = (nextIndex) => {
+      overlays[frameIndex].setOpacity(0);
+      frameIndex = nextIndex % overlays.length;
+      overlays[frameIndex].setOpacity(0.82);
+      timeEl.textContent = radarFrames[frameIndex].time;
+      fillEl.style.width = `${((frameIndex + 1) / overlays.length) * 100}%`;
+    };
+
+    const timer = window.setInterval(() => {
+      if (playing) showFrame(frameIndex + 1);
+    }, 900);
+
+    toggle.addEventListener("click", () => {
+      playing = !playing;
+      toggle.textContent = playing ? "pause" : "play";
+      toggle.setAttribute("aria-label", playing ? "Pause radar loop" : "Play radar loop");
+    });
+
+    showFrame(0);
+    window.addEventListener("beforeunload", () => window.clearInterval(timer));
+  }
+
+  initRadarLoop();
 
   const profiles = {
     OKX: {

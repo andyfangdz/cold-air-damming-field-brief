@@ -1,0 +1,56 @@
+{
+  "bounds": {
+    "west": -84.5,
+    "south": 35.5,
+    "east": -72.0,
+    "north": 43.5
+  },
+  "source": "NOAA/NWS MRMS base reflectivity time-enabled ImageServer",
+  "frames": [
+    {
+      "time": "2026-05-25 01:10Z",
+      "file": "assets/radar-loop/radar_20260525_0110Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_011013"
+    },
+    {
+      "time": "2026-05-25 01:24Z",
+      "file": "assets/radar-loop/radar_20260525_0124Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_012413"
+    },
+    {
+      "time": "2026-05-25 01:38Z",
+      "file": "assets/radar-loop/radar_20260525_0138Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_013820"
+    },
+    {
+      "time": "2026-05-25 01:52Z",
+      "file": "assets/radar-loop/radar_20260525_0152Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_015216"
+    },
+    {
+      "time": "2026-05-25 02:06Z",
+      "file": "assets/radar-loop/radar_20260525_0206Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_020622"
+    },
+    {
+      "time": "2026-05-25 02:20Z",
+      "file": "assets/radar-loop/radar_20260525_0220Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_022012"
+    },
+    {
+      "time": "2026-05-25 02:34Z",
+      "file": "assets/radar-loop/radar_20260525_0234Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_023414"
+    },
+    {
+      "time": "2026-05-25 02:48Z",
+      "file": "assets/radar-loop/radar_20260525_0248Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_024813"
+    },
+    {
+      "time": "2026-05-25 03:02Z",
+      "file": "assets/radar-loop/radar_20260525_0302Z.png",
+      "sourceName": "CONUS_L2_BREF_QCD_20260525_030219"
+    }
+  ]
+}

@@ -233,6 +233,39 @@
       margin-bottom: 12px;
     }
 
+    .evidence-table {
+      display: grid;
+      grid-template-columns: 0.66fr 0.95fr 1.18fr 1.1fr;
+      margin-top: 30px;
+      border: 2px solid var(--ink);
+      background: rgba(255, 252, 239, 0.76);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+    }
+
+    .evidence-table > div {
+      padding: 12px 14px;
+      border-right: 1px solid rgba(23, 25, 20, 0.42);
+      border-bottom: 1px solid rgba(23, 25, 20, 0.42);
+      font-size: 15px;
+    }
+
+    .evidence-table > div:nth-child(4n) { border-right: 0; }
+    .evidence-table > div:nth-last-child(-n+4) { border-bottom: 0; }
+    .evidence-table .head {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(47, 126, 164, 0.12);
+    }
+
+    .evidence-table .time {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
     .map-frame {
       display: grid;
       grid-template-columns: 0.86fr 1.14fr;
@@ -249,7 +282,7 @@
       box-shadow: 10px 10px 0 rgba(23, 25, 20, 0.09);
     }
 
-    .weather-image img {
+    .weather-image > img {
       display: block;
       width: 100%;
       height: 100%;
@@ -567,6 +600,68 @@
     .lift-card p {
       margin-top: 6px;
       font-size: 15px;
+    }
+
+    .mcv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .mcv-card {
+      position: relative;
+      min-height: 360px;
+      padding: 20px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.76);
+      box-shadow: 8px 8px 0 rgba(23, 25, 20, 0.08);
+      overflow: hidden;
+    }
+
+    .mcv-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -78px auto;
+      width: 170px;
+      height: 170px;
+      border: 12px solid rgba(166, 141, 37, 0.18);
+      border-radius: 50%;
+    }
+
+    .mcv-card .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 8px;
+      border-radius: 3px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mcv-card h3 {
+      font-size: 30px;
+    }
+
+    .mcv-card p {
+      position: relative;
+      z-index: 1;
+      font-size: 17px;
+    }
+
+    .mcv-card .source-line {
+      position: relative;
+      z-index: 1;
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(23, 25, 20, 0.32);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .layer-table {
@@ -947,6 +1042,12 @@
       background: rgba(47, 126, 164, 0.12);
     }
 
+    #s9d .route-table > div {
+      padding: 7px 8px;
+      font-size: 12px;
+      line-height: 1.22;
+    }
+
     .decision-stamp {
       display: grid;
       align-content: center;
@@ -985,6 +1086,81 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 12px;
       color: var(--ink);
+    }
+
+    .radar-proof-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.26fr) minmax(280px, 0.74fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .radar-proof-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .proof-tile {
+      padding: 12px 14px;
+      border: 2px solid rgba(23, 25, 20, 0.72);
+      border-radius: 6px;
+      background: rgba(255, 252, 239, 0.78);
+      box-shadow: 5px 5px 0 rgba(23, 25, 20, 0.07);
+    }
+
+    .proof-tile .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--warm);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .proof-tile h3 {
+      font-size: 21px;
+    }
+
+    .proof-tile p {
+      font-size: 12.5px;
+      margin-top: 6px;
+    }
+
+    .dbz-legend {
+      position: absolute;
+      left: 12px;
+      bottom: 152px;
+      z-index: 700;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 8px;
+      border: 1px solid rgba(23, 25, 20, 0.55);
+      border-radius: 4px;
+      background: rgba(255, 252, 239, 0.9);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      color: var(--ink);
+    }
+
+    .dbz-ramp {
+      width: 116px;
+      height: 9px;
+      border: 1px solid rgba(23, 25, 20, 0.44);
+      border-radius: 999px;
+      background: linear-gradient(90deg, #5d8fcf, #39d266, #d7bd20, #df6828, #b82424);
+    }
+
+    .corridor-proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .corridor-proof .proof-tile {
+      min-height: 148px;
     }
 
     .radar-box {
@@ -1036,6 +1212,13 @@
 
     .radar-loop-card .leaflet-image-layer {
       transition: opacity 220ms linear;
+    }
+
+    .radar-loop-card .radar-canvas-layer {
+      position: absolute;
+      pointer-events: none;
+      transition: opacity 220ms linear;
+      will-change: transform;
     }
 
     .radar-loop-card .leaflet-tooltip {
@@ -1206,6 +1389,7 @@
       .slide { padding: 46px 22px; }
       .slide::before { left: 22px; }
       .slide::after { right: 22px; }
+      .nav { display: none; }
       h1 { font-size: 48px; }
       h2 { font-size: 38px; }
       p { font-size: 18px; }
@@ -1215,6 +1399,9 @@
       .proof-grid,
       .diagnostic-grid,
       .lift-diagnosis,
+      .mcv-grid,
+      .radar-proof-grid,
+      .corridor-proof,
       .validation-row,
       .map-frame,
       .metric-row,
@@ -1229,6 +1416,15 @@
       }
       .timeline {
         grid-template-columns: 1fr;
+      }
+      .evidence-table {
+        grid-template-columns: 1fr;
+      }
+      .evidence-table > div {
+        border-right: 0;
+      }
+      .evidence-table .head {
+        display: none;
       }
       .timeline > div {
         border-right: 0;
@@ -1246,12 +1442,24 @@
       .radar-note {
         grid-column: 1 / -1;
       }
+      .dbz-legend {
+        top: 12px;
+        right: 10px;
+        bottom: auto;
+        left: auto;
+      }
       .layer-table,
       .parcel-table {
         grid-template-columns: repeat(5, minmax(0, 1fr));
       }
       .route-table {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .worked-grid > div:first-child {
+        overflow-x: auto;
+      }
+      .route-table {
+        min-width: 760px;
       }
       .layer-table > div,
       .parcel-table > div,
@@ -1348,6 +1556,19 @@
     </div>
   </section>
 
+  <section class="slide" id="s2b" data-kicker="Evidence ledger" data-number="03/19">
+    <h2>Lock the clock before interpreting the storm story.</h2>
+    <p>Everything below is UTC first, with Eastern Daylight Time in parentheses. This separates what was observed at briefing time from what was forecast later.</p>
+    <div class="evidence-table" aria-label="UTC and EDT evidence timeline">
+      <div class="head">Time</div><div class="head">Evidence</div><div class="head">What it proves</div><div class="head">Decision impact</div>
+      <div class="time">24 May 18Z<br>(Sun 2 PM EDT)</div><div>WPC surface analysis plus PHI AFD</div><div>East Coast boundary was still fighting a strong CAD wedge; the warm front had not simply swept north.</div><div>Warm-front placement becomes the forecast hinge, not a background detail.</div>
+      <div class="time">25 May 00Z<br>(Sun 8 PM EDT)</div><div>OKX/FFC/IAD/RNK soundings</div><div>NYC had a shallow cool lid at the surface, while 925/850 mb flow was warmer, moist, and southwesterly.</div><div>Surface CIN/stability does not rule out forced/elevated rain, but it does argue against NYC surface-rooted storms.</div>
+      <div class="time">25 May 01-03Z<br>(Sun 9-11 PM EDT)</div><div>MRMS loop, METARs, SPC 01Z update</div><div>The active precip band favored the Appalachians/inland PA corridor while NYC stayed cool, low, and mostly non-thunder in observations.</div><div>Radar becomes a route-risk trigger, not proof that the coastal surface layer is convectively usable.</div>
+      <div class="time">25 May 03-04Z<br>(Sun 11 PM-midnight EDT)</div><div>KCDW/KFRG/KABE/KIPT obs and TAFs</div><div>Departure and westbound alternates were still low; no obvious VMC escape chain existed.</div><div>For a recreational/training westbound flight, this is a no-go even before debating embedded thunder.</div>
+      <div class="time">25 May 12-16Z<br>(Mon 8 AM-noon EDT)</div><div>OKX/PHI AFDs and NYC-area TAF PROB30 TSRA/CB language</div><div>The later warm-front/cold-front/shortwave window can improve ceilings while increasing convective uncertainty.</div><div>Reassess from fresh observations; do not launch just because the warm front is forecast to move.</div>
+    </div>
+  </section>
+
   <section class="slide" id="s3" data-kicker="Surface analysis" data-number="03/19">
     <h2>The surface map had the classic CAD fingerprint.</h2>
     <p>Look for the frontal clutter along the East Coast, high pressure to the north/east side, and a low/wave trying to lift the boundary north.</p>
@@ -1421,7 +1642,7 @@
           <div class="num">4</div>
           <div>
             <h3>Route impact</h3>
-            <p>Only then decide whether the problem is low IFR, embedded convection, terrain-trapped escape routes, or all three.</p>
+            <p>Only then decide whether the problem is low IFR, confirmed embedded convection, terrain-trapped escape routes, or uncertainty you cannot safely absorb.</p>
           </div>
         </div>
       </div>
@@ -1568,6 +1789,31 @@
     </div>
   </section>
 
+  <section class="slide" id="s4c" data-kicker="MCV proof" data-number="08/19">
+    <h2>The MCV is a diagnosed feature, not a convenient label.</h2>
+    <p>The strongest version of the story is still conservative: broad rain came from upglide/fronts; the MCV added organization and ascent where instability was available.</p>
+    <div class="mcv-grid">
+      <div class="mcv-card">
+        <span class="tag">FFC 24 May 18:29Z</span>
+        <h3>Atlanta identified the remnant Gulf MCV.</h3>
+        <p>FFC described showers and storms becoming quasi-organized and bolstered by a remnant Gulf MCV lifting north/east, with nearly saturated profiles and tall, skinny CAPE.</p>
+        <div class="source-line">Use: direct forecaster diagnosis of the mobile mesoscale lift source.</div>
+      </div>
+      <div class="mcv-card">
+        <span class="tag">SPC 25 May 00:52Z</span>
+        <h3>SPC tracked it into the southern Appalachians.</h3>
+        <p>SPC placed a lower/mid-level MCV moving NNE from northwest Georgia into the southern Appalachians, then noted forcing spreading into cooler, more stable air.</p>
+        <div class="source-line">Use: independent timing and direction check on the MCV track.</div>
+      </div>
+      <div class="mcv-card">
+        <span class="tag">Forecast read</span>
+        <h3>Organizer, not magic thunder fuel.</h3>
+        <p>The MCV explains why forcing was coherent. It does not erase the cold dome. Where the MCV/upglide overlapped warm-sector instability, storms were more credible; where it crossed the wedge, elevated rain/embedded thunder became the better read.</p>
+        <div class="source-line">Confidence: high on MCV presence, lower on exact thunder rooting without lightning/echo-top data.</div>
+      </div>
+    </div>
+  </section>
+
   <section class="slide" id="s5" data-kicker="Soundings" data-number="08/19">
     <h2>The 00Z soundings separate the two air masses.</h2>
     <p>OKX had a cool surface layer with a low-level inversion and almost no surface-based CAPE. The useful instability was weak, elevated, and tied to the 925 mb source layer.</p>
@@ -1599,9 +1845,9 @@
             <div class="small">J/kg</div>
           </div>
           <div class="metric">
-            <div class="label">OKX MUCAPE proxy</div>
+            <div class="label">OKX 925 mb parcel</div>
             <div class="number">189</div>
-            <div class="small">J/kg, 925 mb parcel</div>
+            <div class="small">J/kg, diagnostic proxy</div>
           </div>
         </div>
         <div class="parcel-table" aria-label="OKX parcel diagnostics">
@@ -1610,7 +1856,7 @@
           <div>925 mb</div><div>189 J/kg</div><div>0</div><div>925 / 540 mb</div><div>Weak elevated thunder/efficient rain possible if forced.</div>
           <div>850 mb</div><div>4 J/kg</div><div>-37</div><div>640 / 621 mb</div><div>Less useful; the better NYC source was lower, near 925 mb.</div>
         </div>
-        <p class="small">Parcel diagnostics are MetPy calculations from the archived OKX 00Z sounding. The 925 mb parcel is a local MUCAPE proxy; a live briefing should still check plan-view model MUCAPE/elevated CAPE fields.</p>
+        <p class="small">Parcel diagnostics are MetPy calculations from the archived OKX 00Z sounding. The 925 mb parcel is a local diagnostic proxy for elevated instability, not a substitute for plan-view operational MUCAPE/elevated CAPE fields.</p>
         <div class="parcel-inset" aria-label="OKX parcel-source schematic">
           <h4>OKX parcel-source sketch</h4>
           <svg viewBox="0 0 620 150" role="img" aria-label="Surface wedge capped below a weak 925 mb elevated source layer">
@@ -1654,32 +1900,79 @@
           <li><strong>KCDW:</strong> 13/13 deg C, OVC006, east-southeast wind.</li>
           <li><strong>KFRG:</strong> 13/13 deg C, 040/05, 2 SM BR, OVC003 at 0153Z; LIFR and fully in the coastal wedge.</li>
           <li><strong>KCLT:</strong> 22/21 deg C with TSRA and CB - much closer to the active convective air mass.</li>
+          <li><strong>KATL:</strong> 22Z TSRA with FEW025CB and lightning remarks; by 02Z rain had ended.</li>
         </ul>
-        <p><strong>Read the contrast:</strong> NYC/northern NJ settles into IFR/LIFR late in the period, while CLT/ATL show actual TS/CB language. That is stronger evidence of convection than reflectivity alone.</p>
+        <p><strong>Read the contrast:</strong> NYC/northern NJ settles into IFR/LIFR late in the period, while CLT and earlier ATL reports show actual TS/CB/lightning language. That is stronger evidence of convection than reflectivity alone.</p>
       </div>
     </div>
   </section>
 
   <section class="slide" id="s7" data-kicker="Radar check" data-number="10/19">
-    <h2>The radar loop shows the shield riding the western edge of the wedge.</h2>
-    <p>The strongest echoes repeatedly favor the Appalachian corridor into inland Pennsylvania. NYC stays on the cool, marine side with weaker returns.</p>
-    <div class="weather-image radar-loop-card">
-      <div id="radarLoopMap" role="img" aria-label="Animated NOAA MRMS radar reflectivity from 01:10Z to 03:02Z over an OpenStreetMap basemap"></div>
-      <div class="radar-panel">
-        <button type="button" id="radarToggle" aria-label="Pause radar loop">pause</button>
-        <div class="radar-time" id="radarTime">2026-05-25 01:10Z</div>
-        <div class="radar-track" aria-hidden="true"><span id="radarTrackFill"></span></div>
-        <div class="radar-note">NOAA/NWS MRMS base reflectivity frames, frozen from 01:10-03:02Z. This is a focused example window, not the whole event; reflectivity alone does not prove lightning.</div>
+    <h2>The radar loop is precipitation evidence, not thunder proof.</h2>
+    <p>MRMS places the main band along the Appalachians into inland Pennsylvania during 01-03Z. The route lesson is the gradient: strong returns west/inland, low stratus and weaker/no-TS observations near NYC.</p>
+    <div class="radar-proof-grid">
+      <div class="weather-image radar-loop-card">
+        <div id="radarLoopMap" role="img" aria-label="Animated NOAA MRMS radar reflectivity from 01:10Z to 03:02Z over an OpenStreetMap basemap"></div>
+        <div class="dbz-legend" aria-label="Approximate radar reflectivity color legend"><span>dBZ</span><span class="dbz-ramp"></span><span>15</span><span>30</span><span>45+</span></div>
+        <div class="radar-panel">
+          <button type="button" id="radarToggle" aria-label="Pause radar loop">pause</button>
+          <div class="radar-time" id="radarTime">2026-05-25 01:10Z</div>
+          <div class="radar-track" aria-hidden="true"><span id="radarTrackFill"></span></div>
+          <div class="radar-note">NOAA/NWS MRMS base reflectivity frames, reprojected over OSM from 01:10-03:02Z. Alignment was checked against the NYC coast, Chesapeake Bay, Lake Erie, and the Appalachians. Reflectivity alone does not prove lightning.</div>
+        </div>
+      </div>
+      <div class="radar-proof-stack">
+        <div class="proof-tile">
+          <div class="tag">What this proves</div>
+          <h3>Precip focus was inland.</h3>
+          <p>The higher returns repeatedly sit west of the coastal wedge: WV/central PA/Appalachian corridor first, NYC weaker and on the cool side.</p>
+        </div>
+        <div class="proof-tile">
+          <div class="tag">What it does not prove</div>
+          <h3>Thunder near NYC.</h3>
+          <p>NYC/KFRG observations had BR/DZ/RA and OVC002-006 style ceilings, but no TS/CB wording in this window.</p>
+        </div>
+        <div class="proof-tile">
+          <div class="tag">Route corridor</div>
+          <h3>KABE/KIPT stayed low.</h3>
+          <p>KABE was OVC006 by 0151Z; KIPT slid to OVC009 by 0206Z. That supports the no-escape problem more directly than distant southern thunder.</p>
+        </div>
+        <div class="proof-tile">
+          <div class="tag">Provenance / alignment</div>
+          <h3>Bounds are fixed.</h3>
+          <p>Frames are NOAA/NWS MRMS CONUS_L2_BREF_QCD from 011013-030219Z, drawn over 35.5-43.5N / 84.5-72W. Alignment checked against Lake Erie, Chesapeake Bay, the NYC coast, and the Appalachians.</p>
+        </div>
       </div>
     </div>
-    <p class="small proxy-warning"><strong>Proxy-evidence note:</strong> this static deck validates convection using MRMS reflectivity plus available METAR TS/CB/lightning wording. In a live briefing, confirm with GLM/NLDN/ENTLN lightning and MRMS echo-top products before treating a route return as embedded thunder.</p>
-    <div class="validation-row">
-      <div><strong>Reflectivity:</strong> strongest echoes west/inland; NYC weaker in this window.</div>
-      <div><strong>Lightning/TS:</strong> KCLT had -TSRA and OCNL LTGICCG; ATL had CB/lightning earlier.</div>
-      <div><strong>Echo tops proxy:</strong> KCLT reported BKN021CB with OVC250; NYC reported no TS/CB.</div>
-      <div><strong>NYC/KFRG obs:</strong> BR/DZ/RA, OVC002-006, no TS language.</div>
-      <div><strong>Rooting:</strong> OKX surface CAPE ~2; 925 mb parcel proxy 189 J/kg.</div>
+    <p class="small proxy-warning"><strong>Proxy-evidence note:</strong> this static deck validates convection only where METAR TS/CB/lightning wording exists, and treats the NYC-to-PA corridor thunder signal as unproven in this window. In a live briefing, confirm with GLM/NLDN/ENTLN lightning and MRMS echo-top products before treating a route return as embedded thunder.</p>
+  </section>
+
+  <section class="slide" id="s7b" data-kicker="Convective proof" data-number="11/19">
+    <h2>Separate “heavy rain on route” from “embedded thunder on route.”</h2>
+    <p>The no-go case does not need overclaiming. At 03-04Z, the strongest hard evidence near the NYC-to-PA corridor was low ceilings plus heavy/inland precip. Direct thunder evidence was stronger farther south and later in the NYC forecast window.</p>
+    <div class="corridor-proof">
+      <div class="proof-tile">
+        <div class="tag">Departure side</div>
+        <h3>Low IFR trap</h3>
+        <p>KCDW 0153Z: OVC006. KJFK 0151Z: OVC005. KFRG nearby reports were LIFR/BR. This alone removes a casual westbound escape.</p>
+      </div>
+      <div class="proof-tile">
+        <div class="tag">Inland alternates</div>
+        <h3>Not clean outs</h3>
+        <p>KABE 0151Z OVC006 and KIPT 0206Z OVC009 keep the westbound chain low. If the route worsens, the bailout airports are not meaningfully better.</p>
+      </div>
+      <div class="proof-tile">
+        <div class="tag">Thunder evidence</div>
+        <h3>Strong south, weak local</h3>
+        <p>KCLT had TS/CB/lightning wording near 02Z, and KATL had TSRA/CB/lightning earlier in the evening. NYC and the immediate westbound corridor did not show equally direct TS proof in the sampled observations.</p>
+      </div>
+      <div class="proof-tile">
+        <div class="tag">Forecast window</div>
+        <h3>Risk returns later</h3>
+        <p>NYC-area TAFs and OKX/PHI AFDs put convective showers/possible TS in the Monday morning frontal/shortwave window, after the 03-04Z no-go snapshot.</p>
+      </div>
     </div>
+    <div class="big-claim">Operationally: stand down now because the ceiling/escape chain fails. Treat embedded thunder as an uncertainty that needs lightning/echo-top confirmation before any later launch.</div>
   </section>
 
   <section class="slide" id="s8" data-kicker="Lift sources" data-number="11/19">
@@ -1688,7 +1981,7 @@
     <div class="grid-3">
       <div class="card">
         <h3>1. Isentropic upglide</h3>
-        <p>Warm/moist southwesterly flow was forced up and over the shallow CAD dome. This supports broad rain and embedded elevated convection.</p>
+        <p>Warm/moist southwesterly flow was forced up and over the shallow CAD dome. This supports broad rain and possible embedded elevated convection if lightning/CB/echo-top evidence appears.</p>
       </div>
       <div class="card">
         <h3>2. MCV ascent</h3>
@@ -1758,7 +2051,7 @@
       <div class="decision-card scenario-card">
         <div class="tag">5. Alternates / escape</div>
         <h3>Pre-commit the exits.</h3>
-        <p>No-go if alternates west are also IFR/LIFR, embedded TS/CB is on the route, or the only escape is back into coastal LIFR.</p>
+        <p>No-go if alternates west are also IFR/LIFR, TS/CB is confirmed on the route, or the only escape is back into coastal LIFR.</p>
       </div>
     </div>
     <div class="big-claim">Go/no-go lesson: in CAD, the safe question is not “are there storms at NYC?” It is “can I keep a clean escape path while the warm/moist conveyor throws efficient rain or elevated thunder over low ceilings?”</div>
@@ -1796,7 +2089,7 @@
       <div class="brief-card">
         <div class="tag">6 / Escape</div>
         <h3>Pre-commit outs.</h3>
-        <p>No-go if west alternates are IFR/LIFR, returns are convective, or the only retreat is back into the coastal wedge.</p>
+        <p>No-go if west alternates are IFR/LIFR, heavy returns have confirmed convective evidence, or the only retreat is back into the coastal wedge.</p>
       </div>
     </div>
     <div class="uncertainty-row" aria-label="Decision uncertainty switches">
@@ -1810,22 +2103,23 @@
   </section>
 
   <section class="slide" id="s9d" data-kicker="Worked decision" data-number="15/19">
-    <h2>Worked example: KCDW/KFRG westbound at 03-04Z.</h2>
-    <p>This is not a route recommendation. It shows how the evidence gates would have read during the case window.</p>
+    <h2>Worked example: KCDW/KFRG toward the KABE-KIPT corridor at 03-04Z.</h2>
+    <p>This is not a route recommendation. It is a conservative training-flight gate check: no external pressure, target at least one hour fuel reserve, and two usable outs before crossing rising terrain.</p>
     <div class="worked-grid">
       <div>
         <div class="route-table" aria-label="Worked go/no-go evidence table">
-          <div class="head">Gate</div><div class="head">Departure</div><div class="head">Route / terrain</div><div class="head">Convective proof</div>
-          <div>Observed now</div><div>KCDW OVC006; KFRG VV002/OVC003 LIFR; wedge still saturated.</div><div>KABE OVC006, KIPT OVC008-009; no obvious westbound VMC escape.</div><div>NYC/KFRG no TS/CB wording; strongest returns west/inland.</div>
+          <div class="head">Gate</div><div class="head">Departure</div><div class="head">Route / alternates</div><div class="head">Convective proof</div>
+          <div>Observed now</div><div>KCDW OVC006; KFRG-area LIFR/BR; wedge still saturated.</div><div>KABE OVC006, KIPT OVC009; no obvious westbound VMC escape or clean alternate chain.</div><div>NYC/KFRG no TS/CB wording; strongest returns west/inland.</div>
           <div>Forecast gate</div><div>KTEB/JFK/ISP TAFs kept 1/2-2 SM DZ/FG/SHRA and OVC003-006 through morning.</div><div>KABE TAF: OVC002 at 06Z, OVC004 at 14Z, BKN015 only by 18Z. KIPT: OVC007 at 12Z, OVC015 by 16Z.</div><div>NYC-area TAFs carried PROB30 TSRA/CB around 12-16Z, so the later improvement window also had embedded-convection risk.</div>
-          <div>Minimum-altitude problem</div><div>Departure ceiling is below normal pattern altitude and below any visual fallback.</div><div>North/eastern PA terrain and MEAs force an IFR plan; low tops are not proven, and below-cloud escape is unavailable.</div><div>Heavy returns cannot be waved through without lightning/echo-top/CB confirmation.</div>
-          <div>Decision</div><div>Stand down for a recreational/training flight.</div><div>Reassess after observed ceilings improve, western alternates open, and route returns lose convective evidence.</div><div>Use radar as a trigger to ask better questions, not as a clearance to go.</div>
+          <div>Minimum-altitude problem</div><div>Departure ceiling is below normal pattern altitude and below any visual fallback.</div><div>Northeast/eastern PA terrain and IFR minimum altitudes compress options; below-cloud escape is unavailable.</div><div>Heavy returns cannot be waved through without lightning/echo-top/CB confirmation.</div>
+          <div>Personal gate</div><div>Need observed improvement, not only forecast improvement.</div><div>Need two usable outs outside the wedge with fuel reserve still intact.</div><div>Need no lightning/CB/echo-top signal on the route, or a route that avoids it with room to spare.</div>
+          <div>Decision</div><div>Stand down for a recreational/training flight.</div><div>Reassess after observed ceilings improve, western alternates open, and heavy returns are either gone or proven non-convective.</div><div>Use radar as a trigger to ask better questions, not as a clearance to go.</div>
         </div>
       </div>
       <div class="decision-stamp">
         <div class="verdict">NO-GO now.</div>
-        <p><strong>Why:</strong> the departure side was LIFR/IFR, the westbound escape/alternate chain was still low, and the next forecast improvement window overlapped with possible embedded TS/CB.</p>
-        <p><strong>What would flip it:</strong> KCDW/KFRG ceilings actually lifting, KABE/KIPT or nearer alternates becoming usable, no lightning/CB/echo-top signal on route, and a clean retreat corridor.</p>
+        <p><strong>Why:</strong> the departure side was LIFR/IFR, the KABE/KIPT alternate chain was still low, and the next forecast improvement window overlapped with possible embedded TS/CB.</p>
+        <p><strong>What would flip it:</strong> KCDW/KFRG ceilings actually lifting, KABE/KIPT or nearer alternates becoming usable, no lightning/CB/echo-top signal on route, and a clean retreat corridor with fuel reserve preserved.</p>
         <p class="small">TAF sources: KTEB/KJFK/KISP 0245Z, KABE 0131Z, KIPT 0212Z May 25. Observations: AviationWeather METAR API, 01-04Z.</p>
       </div>
     </div>
@@ -1836,7 +2130,7 @@
     <div class="grid-3">
       <div class="card">
         <h3>Do not read radar alone</h3>
-        <p>Radar showed where the convection was, but the sounding explained why it was not rooted near NYC.</p>
+        <p>Radar showed the precip band. Soundings and TS/CB/lightning reports determine whether that band is elevated rain, embedded thunder, or surface-rooted convection.</p>
       </div>
       <div class="card">
         <h3>CAD creates false simplicity</h3>
@@ -1922,6 +2216,9 @@
 <script>
   const deck = document.getElementById("deck");
   const slides = Array.from(document.querySelectorAll(".slide"));
+  slides.forEach((slide, index) => {
+    slide.dataset.number = `${String(index + 1).padStart(2, "0")}/${slides.length}`;
+  });
   const go = (delta) => {
     const y = deck.scrollTop;
     const idx = Math.max(0, Math.min(slides.length - 1, Math.round(y / window.innerHeight) + delta));
@@ -1995,12 +2292,22 @@
     const mapEl = document.getElementById("radarLoopMap");
     if (!mapEl || !window.L || !radarFrames.length) return;
 
-    const bounds = [[35.5, -84.5], [43.5, -72.0]];
+    const radarBounds = {
+      west: -84.5,
+      south: 35.5,
+      east: -72.0,
+      north: 43.5
+    };
+    const bounds = [[radarBounds.south, radarBounds.west], [radarBounds.north, radarBounds.east]];
     const map = L.map(mapEl, {
       zoomControl: true,
       attributionControl: true,
       scrollWheelZoom: false,
       keyboard: false,
+      zoomSnap: 0.25,
+      zoomDelta: 0.5,
+      minZoom: 5,
+      maxZoom: 8.5,
       maxBounds: [[34.4, -86.0], [44.5, -70.7]],
       maxBoundsViscosity: 0.45
     });
@@ -2010,11 +2317,9 @@
       attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
 
-    map.fitBounds(bounds, { padding: [18, 18], animate: false });
+    map.fitBounds(bounds, { padding: [16, 16], animate: false });
 
-    const overlays = radarFrames.map((frame, i) =>
-      L.imageOverlay(frame.file, bounds, { opacity: i === 0 ? 0.82 : 0, interactive: false }).addTo(map)
-    );
+    const radarLayer = createGeographicRadarLayer(radarFrames, radarBounds, { opacity: 0.82 }).addTo(map);
 
     const markerStyle = (color) => ({
       radius: 7,
@@ -2041,11 +2346,10 @@
     let playing = true;
 
     const showFrame = (nextIndex) => {
-      overlays[frameIndex].setOpacity(0);
-      frameIndex = nextIndex % overlays.length;
-      overlays[frameIndex].setOpacity(0.82);
+      frameIndex = nextIndex % radarFrames.length;
+      radarLayer.setFrame(frameIndex);
       timeEl.textContent = radarFrames[frameIndex].time;
-      fillEl.style.width = `${((frameIndex + 1) / overlays.length) * 100}%`;
+      fillEl.style.width = `${((frameIndex + 1) / radarFrames.length) * 100}%`;
     };
 
     const timer = window.setInterval(() => {
@@ -2063,6 +2367,86 @@
   }
 
   initRadarLoop();
+
+  function createGeographicRadarLayer(frames, bounds, options = {}) {
+    const GeographicRadarLayer = L.Layer.extend({
+      initialize() {
+        this._frameIndex = 0;
+        this._opacity = options.opacity ?? 0.82;
+        this._rowChunks = 96;
+        this._images = frames.map((frame) => {
+          const image = new Image();
+          image.decoding = "async";
+          image.src = frame.file;
+          image.onload = () => this._redraw();
+          return image;
+        });
+      },
+      onAdd(map) {
+        this._map = map;
+        this._canvas = L.DomUtil.create("canvas", "radar-canvas-layer");
+        this._ctx = this._canvas.getContext("2d");
+        map.getPanes().overlayPane.appendChild(this._canvas);
+        map.on("zoom viewreset move resize", this._reset, this);
+        this._reset();
+      },
+      onRemove(map) {
+        map.off("zoom viewreset move resize", this._reset, this);
+        L.DomUtil.remove(this._canvas);
+        this._map = null;
+      },
+      setFrame(index) {
+        this._frameIndex = index;
+        this._redraw();
+      },
+      _reset() {
+        if (!this._map || !this._canvas) return;
+        const size = this._map.getSize();
+        const topLeft = this._map.containerPointToLayerPoint([0, 0]);
+        L.DomUtil.setPosition(this._canvas, topLeft);
+        this._canvas.width = size.x;
+        this._canvas.height = size.y;
+        this._canvas.style.width = `${size.x}px`;
+        this._canvas.style.height = `${size.y}px`;
+        this._redraw();
+      },
+      _redraw() {
+        if (!this._map || !this._ctx) return;
+        const image = this._images[this._frameIndex];
+        const width = image?.naturalWidth || 0;
+        const height = image?.naturalHeight || 0;
+        const canvas = this._canvas;
+        const ctx = this._ctx;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (!width || !height) return;
+
+        const crop = 1;
+        const usableWidth = width - crop * 2;
+        const usableHeight = height - crop * 2;
+        const west = this._map.latLngToContainerPoint([bounds.north, bounds.west]).x;
+        const east = this._map.latLngToContainerPoint([bounds.north, bounds.east]).x;
+        const drawWidth = east - west;
+        const chunkHeight = usableHeight / this._rowChunks;
+
+        ctx.save();
+        ctx.globalAlpha = this._opacity;
+        ctx.imageSmoothingEnabled = true;
+        for (let i = 0; i < this._rowChunks; i += 1) {
+          const srcY = crop + i * chunkHeight;
+          const srcH = i === this._rowChunks - 1 ? crop + usableHeight - srcY : chunkHeight;
+          const northFrac = (srcY - crop) / usableHeight;
+          const southFrac = (srcY + srcH - crop) / usableHeight;
+          const northLat = bounds.north - (northFrac * (bounds.north - bounds.south));
+          const southLat = bounds.north - (southFrac * (bounds.north - bounds.south));
+          const top = this._map.latLngToContainerPoint([northLat, bounds.west]).y;
+          const bottom = this._map.latLngToContainerPoint([southLat, bounds.west]).y;
+          ctx.drawImage(image, crop, srcY, usableWidth, srcH, west, top, drawWidth, bottom - top + 1);
+        }
+        ctx.restore();
+      }
+    });
+    return new GeographicRadarLayer();
+  }
 
   const profiles = {
     OKX: {

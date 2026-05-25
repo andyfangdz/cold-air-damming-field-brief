@@ -8,11 +8,13 @@ The deck uses:
 - AviationWeather METAR screenshots
 - WPC surface analysis images
 - NOAA/NWS MRMS radar loop over an OpenStreetMap basemap
+- A UTC/EDT evidence ledger separating observed conditions from later forecast risk
+- Direct MCV proof chain from FFC and SPC text
 - 00Z sounding-derived comparison chart
 - 925/850 mb layer diagnostics for the elevated warm/moist conveyor
 - An OKX parcel-source inset separating the surface wedge from the 925 mb elevated source layer
 - Hourly METAR flight-category timelines to show wedge duration without SPECI count bias
-- Instrument-pilot decision and briefing-workflow slides focused on low ceilings, embedded convection proof, alternates, terrain, and escape paths
+- Instrument-pilot decision and briefing-workflow slides focused on low ceilings, embedded-convection uncertainty, alternates, terrain, and escape paths
 - A worked KCDW/KFRG westbound go/no-go example using observed ceilings, nearby TAFs, route/terrain constraints, and convective-proof gates
 
 ## Source Traceability
@@ -27,6 +29,7 @@ The deck uses:
 - TAFs for the worked decision example: KTEB/KJFK/KISP 0245Z, KABE 0131Z, and KIPT 0212Z May 25 products from the AviationWeather API.
 - Freezing-level context is derived from 00Z soundings: OKX about 12.7k ft, IAD/RNK about 13.9k ft, FFC about 14.5k ft.
 - Radar loop: NOAA/NWS MRMS base reflectivity frames from 01:10Z-03:02Z May 25 over OpenStreetMap basemap tiles.
-- Convective validation in the static deck uses proxy evidence from MRMS reflectivity plus METAR TS/CB/lightning wording; live preflight should confirm with dedicated lightning and echo-top products.
+- Radar loop alignment was checked visually against the NYC coast, Chesapeake Bay, Lake Erie, and the Appalachians after reprojection onto OSM.
+- Convective validation in the static deck uses proxy evidence from MRMS reflectivity plus METAR TS/CB/lightning wording; live preflight should confirm with dedicated lightning and echo-top products. The deck explicitly treats NYC/PA corridor thunder as an uncertainty when direct local TS/CB evidence is weak.
 
 Open `index.html` directly, or deploy as a static site.
